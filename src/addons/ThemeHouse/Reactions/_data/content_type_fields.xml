@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content_type_fields>
+  <field content_type="conversation_message" field_name="react_handler_class">ThemeHouse\Reactions\React\ConversationMessage</field>
+  <field content_type="post" field_name="react_handler_class">ThemeHouse\Reactions\React\Post</field>
+  <field content_type="profile_post" field_name="react_handler_class">ThemeHouse\Reactions\React\ProfilePost</field>
+  <field content_type="profile_post_comment" field_name="react_handler_class">ThemeHouse\Reactions\React\ProfilePostComment</field>
+  <field content_type="reaction" field_name="stats_handler_class">ThemeHouse\Reactions\Stats\Reaction</field>
+</content_type_fields>

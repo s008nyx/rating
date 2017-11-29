@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="conversation_list_macros" modification_key="th_conversation_list_macros_reactions" description="Adds the first post reactions to the conversation list item" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<ul class="structItem-statuses">.*<\/ul>.*<\/xf:if>)/Us]]></find>
+    <replace><![CDATA[$0
+<xf:macro template="th_display_reactions" name="reactions_bit_list" arg-type="conversation_message" arg-id="first_message_id" arg-content="{$userConv.Master}" arg-reactUsers="{$userConv.Master.getReactUsers()}" />]]></replace>
+  </modification>
+  <modification type="public" template="conversation_message_macros" modification_key="th_conversation_message_macros_button_reactions" description="Removes the default like/unlike button from conversation messages" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:if is="\$message.canLike\(\)">.*<a.*<\/a>.*<\/xf:if>)/Us]]></find>
+    <replace><![CDATA[]]></replace>
+  </modification>
+  <modification type="public" template="conversation_message_macros" modification_key="th_conversation_message_macros_bar_reactions" description="Adds the reactions bar to conversation messages" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<div class="likesBar js-likeList.*>.*<\/div>)/Us]]></find>
+    <replace><![CDATA[<xf:macro template="th_display_reactions" name="reactions_bar" arg-type="conversation_message" arg-id="message_id" arg-content="{$message}" />]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="th_message_macros_reactions" description="Puts the user's given react count into the postbit." execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<div class="message-userExtras">.*<xf:contentcheck>)(.*?)(<\/xf:contentcheck>.*<\/div>)/Us]]></find>
+    <replace><![CDATA[$1
+<xf:if is="{{ property('th_showReactionsPostbit_reactions') }} && {{ property('th_showReactionsPostbit_location_reactions') }} == 'top'">
+	<xf:macro template="th_display_reactions" name="react_postbit" arg-reacts="{$user.react_count}" arg-reactsCount="{$user.getReactTotalCount()}" arg-displayType="{{ property('th_showReactionsPostbit_displayType_reactions') }}" />
+</xf:if>
+$2
+<xf:if is="{{ property('th_showReactionsPostbit_reactions') }} && {{ property('th_showReactionsPostbit_location_reactions') }} == 'bottom'">
+	<xf:macro template="th_display_reactions" name="react_postbit" arg-reacts="{$user.react_count}" arg-reactsCount="{$user.getReactTotalCount()}" arg-displayType="{{ property('th_showReactionsPostbit_displayType_reactions') }}" />
+</xf:if>
+$3]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="th_post_macros_bar_reactions" description="Adds the reactions bar to posts" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<div class="likesBar js-likeList.*>.*<\/div>)/Us]]></find>
+    <replace><![CDATA[<xf:macro template="th_display_reactions" name="reactions_bar" arg-type="post" arg-id="post_id" arg-content="{$post}" />]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="th_post_macros_button_reactions" description="Removes the default like/unlike button from posts" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:if is="\$post.canLike\(\)">.*<a.*<\/a>.*<\/xf:if>)/Us]]></find>
+    <replace><![CDATA[]]></replace>
+  </modification>
+  <modification type="public" template="profile_post_macros" modification_key="th_profile_post_macros_button_reactions" description="Removes the default like/unlike button from profile posts" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:if is="\$profilePost.canLike\(\)">.*<a.*<\/a>.*<\/xf:if>)/Us]]></find>
+    <replace><![CDATA[]]></replace>
+  </modification>
+  <modification type="public" template="profile_post_macros" modification_key="th_profile_post_comments_macros_bar_reactions" description="Adds the reactions bar to profile post comments" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<div class="comment-likes js-commentLikeList.*>.*<\/div>)/Us]]></find>
+    <replace><![CDATA[<xf:macro template="th_display_reactions" name="reactions_bar" arg-type="profile_post_comment" arg-id="profile_post_comment_id" arg-content="{$comment}" />]]></replace>
+  </modification>
+  <modification type="public" template="profile_post_macros" modification_key="th_profile_post_comments_macros_button_reactions" description="Removes the default like/unlike button from profile post comments" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:if is="\$comment.canLike\(\)">.*<a.*<\/a>.*<\/xf:if>)/Us]]></find>
+    <replace><![CDATA[]]></replace>
+  </modification>
+  <modification type="public" template="profile_post_macros" modification_key="th_profile_post_macros_bar_reactions" description="Adds the reactions bar to profile posts" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/<div class="message-responseRow message-responseRow--likes(.*?)<\/div>/s]]></find>
+    <replace><![CDATA[<xf:macro template="th_display_reactions" name="reactions_bar" arg-type="profile_post" arg-id="profile_post_id" arg-content="{$profilePost}" />]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="th_thread_list_macros_reactions" description="Adds the first post reactions to the thread list item" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<ul class="structItem-statuses">.*<\/ul>.*<\/xf:if>)/Us]]></find>
+    <replace><![CDATA[$0
+<xf:macro template="th_display_reactions" name="reactions_bit_list" arg-type="post" arg-id="first_post_id" arg-content="{$thread}" arg-reactUsers="{$thread.getReactUsers()}" />]]></replace>
+  </modification>
+  <modification type="admin" template="tools_rebuild" modification_key="th_tools_rebuild_content_reactions" description="Adds the rebuild content reacts cache entry" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:after_likes]-->]]></find>
+    <replace><![CDATA[$0
+
+<xf:form action="{{ link('tools/rebuild') }}" class="block">
+	<div class="block-container">
+		<h2 class="block-header">{{ phrase('th_rebuild_content_react_counts_reactions') }}</h2>
+		<div class="block-body">
+			<xf:selectrow name="options[type]"
+				label="{{ phrase('content_type') }}">
+				<xf:option value="">{{ phrase('all') }}</xf:option>
+				<xf:options source="{{ $xf.app.getContentTypePhrases(true, 'react_handler_class') }}" />
+			</xf:selectrow>
+		</div>
+		<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+	</div>
+	<xf:hiddenval name="job">ThemeHouse\Reactions:ContentReactCount</xf:hiddenval>
+</xf:form>]]></replace>
+  </modification>
+  <modification type="admin" template="tools_rebuild" modification_key="th_tools_rebuild_reacts_counted_reactions" description="Adds the rebuild reacts counted status cache entry" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:after_like_status]-->]]></find>
+    <replace><![CDATA[$0
+
+<xf:form action="{{ link('tools/rebuild') }}" class="block">
+	<div class="block-container">
+		<h2 class="block-header">{{ phrase('th_rebuild_reacts_counted_status_reactions') }}</h2>
+		<div class="block-body">
+			<xf:selectrow name="options[type]"
+				label="{{ phrase('content_type') }}">
+				<xf:option value="">{{ phrase('all') }}</xf:option>
+				<xf:options source="{{ $xf.app.getContentTypePhrases(true, 'react_handler_class') }}" />
+			</xf:selectrow>
+		</div>
+		<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+	</div>
+	<xf:hiddenval name="job">ThemeHouse\Reactions:ReactIsCounted</xf:hiddenval>
+</xf:form>]]></replace>
+  </modification>
+  <modification type="admin" template="tools_rebuild" modification_key="th_tools_rebuild_convert_likes_reactions" description="Adds the convert likes to reactions entry" execution_order="9" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:after_likes]-->]]></find>
+    <replace><![CDATA[$0
+
+<xf:form action="{{ link('tools/rebuild') }}" class="block">
+	<div class="block-container">
+		<h2 class="block-header">{{ phrase('th_convert_likes_to_reactions_reactions') }}</h2>
+		<div class="block-body">
+			<xf:inforow>{{ phrase('th_this_will_convert_likes_into_reactions') }}</xf:inforow>
+		</div>
+		<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+	</div>
+	<xf:hiddenval name="job">ThemeHouse\Reactions:ConvertLike</xf:hiddenval>
+</xf:form>
+
+<xf:form action="{{ link('tools/rebuild') }}" class="block">
+	<div class="block-container">
+		<h2 class="block-header">{{ phrase('th_convert_reactions_to_likes_reactions') }}</h2>
+		<div class="block-body">
+			<xf:inforow>{{ phrase('th_this_will_convert_reactions_into_likes_reactions') }}</xf:inforow>
+		</div>
+		<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+	</div>
+	<xf:hiddenval name="job">ThemeHouse\Reactions:ConvertLikeReaction</xf:hiddenval>
+</xf:form>]]></replace>
+  </modification>
+  <modification type="admin" template="tools_rebuild" modification_key="th_tools_rebuild_user_reactions" description="Adds the rebuild user reacts cache entry" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:after_likes]-->]]></find>
+    <replace><![CDATA[$0
+
+<xf:form action="{{ link('tools/rebuild') }}" class="block">
+	<div class="block-container">
+		<h2 class="block-header">{{ phrase('th_rebuild_user_react_counts_reactions') }}</h2>
+		<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+	</div>
+	<xf:hiddenval name="job">ThemeHouse\Reactions:UserReactCount</xf:hiddenval>
+</xf:form>]]></replace>
+  </modification>
+</template_modifications>

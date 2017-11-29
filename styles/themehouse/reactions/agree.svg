@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Agree </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="127.798425" cy="127.798425" r="127.798425"></circle>
+    </defs>
+    <g id="Emoji" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Agree-">
+            <g id="Agree">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#32BA7C" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <path d="M95.1433071,185.448819 L163.160095,250.851318 C217.585292,236.337933 258.071289,193.197003 258.071289,133.934011 C258.071289,132.724562 258.710938,124.556861 258.710938,123.347412 L204.439087,71.0442505 L95.1433071,185.448819 Z" id="Shape" fill="#0AA06E" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                <path d="M71.4222903,121.204911 C65.4643724,115.448839 55.9683074,115.612468 50.2122354,121.570386 C44.4561634,127.528303 44.6197918,137.024368 50.5777097,142.78044 L92.9942136,183.759933 C98.8850673,189.451212 108.252238,189.364498 114.036721,183.565137 L204.77549,92.5929693 C210.625825,86.7275857 210.613626,77.2301188 204.748243,71.3797834 C198.882859,65.529448 189.385392,65.541647 183.535057,71.4070307 L103.221684,151.926986 L71.4222903,121.204911 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

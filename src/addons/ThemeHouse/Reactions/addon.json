@@ -1,0 +1,14 @@
+{
+    "legacy_addon_id": "",
+    "title": "[TH] Reactions",
+    "description": "Show how you feel with a single click",
+    "version_id": 1000470,
+    "version_string": "1.0.4",
+    "dev": "ThemeHouse",
+    "dev_url": "https://www.themehouse.com",
+    "faq_url": "",
+    "support_url": "https://www.themehouse.com/contact/support",
+    "extra_urls": [],
+    "require": [],
+    "icon": "icon.png"
+}

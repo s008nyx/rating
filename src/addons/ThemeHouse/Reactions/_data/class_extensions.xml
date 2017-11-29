@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class_extensions>
+  <extension from_class="XF\CssRenderer" to_class="ThemeHouse\Reactions\XF\CssRenderer" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\ConversationMaster" to_class="ThemeHouse\Reactions\XF\Entity\ConversationMaster" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\ConversationMessage" to_class="ThemeHouse\Reactions\XF\Entity\ConversationMessage" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\Post" to_class="ThemeHouse\Reactions\XF\Entity\Post" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\ProfilePost" to_class="ThemeHouse\Reactions\XF\Entity\ProfilePost" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\ProfilePostComment" to_class="ThemeHouse\Reactions\XF\Entity\ProfilePostComment" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\Thread" to_class="ThemeHouse\Reactions\XF\Entity\Thread" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\User" to_class="ThemeHouse\Reactions\XF\Entity\User" execute_order="10" active="1"/>
+  <extension from_class="XF\Repository\LikedContent" to_class="ThemeHouse\Reactions\XF\Repository\LikedContent" execute_order="10" active="1"/>
+  <extension from_class="XF\Service\User\ContentChange" to_class="ThemeHouse\Reactions\XF\Service\User\ContentChange" execute_order="10" active="1"/>
+  <extension from_class="XF\Str\Formatter" to_class="ThemeHouse\Reactions\XF\Str\Formatter" execute_order="10" active="1"/>
+  <extension from_class="XF\SubContainer\Import" to_class="ThemeHouse\Reactions\XF\SubContainer\Import" execute_order="10" active="1"/>
+  <extension from_class="XF\Template\Templater" to_class="ThemeHouse\Reactions\XF\Template\Templater" execute_order="10" active="1"/>
+</class_extensions>

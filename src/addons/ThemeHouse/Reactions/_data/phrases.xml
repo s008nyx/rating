@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.reactionTypes" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reaction types]]></phrase>
+  <phrase title="admin_navigation.reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reactions]]></phrase>
+  <phrase title="admin_navigation.reactionsGroup" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reactions]]></phrase>
+  <phrase title="admin_permission.thReactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Manage [TH] Reactions]]></phrase>
+  <phrase title="permission.thReactionsModerator_canRemoveAllReacts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Can remove all reacts]]></phrase>
+  <phrase title="permission.thReactions_canReact" version_id="1487871394" version_string="1.0.0"><![CDATA[Can react]]></phrase>
+  <phrase title="permission.thReactions_canRemoveOwnReacts" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Can remove own reacts]]></phrase>
+  <phrase title="permission.thReactions_canViewReactsList" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Can view reacts list]]></phrase>
+  <phrase title="permission.thReactions_dailyReactLimit" version_id="1487871394" version_string="1.0.0"><![CDATA[Maximum amount of reactions per day]]></phrase>
+  <phrase title="permission.thReactions_maxReactsPerContent" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Maximum number of reacts per content]]></phrase>
+  <phrase title="permission_interface.thReactionsModerator" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[TH] Reactions moderator permissions]]></phrase>
+  <phrase title="permission_interface.thReactionsPermissions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[TH] Reactions permissions]]></phrase>
+  <phrase title="style_prop.thMaxReactionsMin" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Max reactions before minimal display]]></phrase>
+  <phrase title="style_prop.thReactionsAnimation" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Animation Type]]></phrase>
+  <phrase title="style_prop.thReactionsDivider" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reactions divider text]]></phrase>
+  <phrase title="style_prop.thReactionsImageDimensions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reaction image dimensions]]></phrase>
+  <phrase title="style_prop.th_reactions__barStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reactions Bar Style]]></phrase>
+  <phrase title="style_prop.th_reactions__listItemRightStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[List Item Right Style]]></phrase>
+  <phrase title="style_prop.th_reactions__listItemStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[List Item Style]]></phrase>
+  <phrase title="style_prop.th_reactions__showTitles" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show Reaction Titles]]></phrase>
+  <phrase title="style_prop.th_reactions__triggerStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Trigger Style]]></phrase>
+  <phrase title="style_prop.th_showReactionsPostbit_displayType_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Reaction postbit type]]></phrase>
+  <phrase title="style_prop.th_showReactionsPostbit_location_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Location to display reaction details in postbit]]></phrase>
+  <phrase title="style_prop.th_showReactionsPostbit_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Enable total reactions received in postbit]]></phrase>
+  <phrase title="style_prop.th_triggerImageStyling_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Trigger image styling]]></phrase>
+  <phrase title="style_prop.th_triggerType_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Trigger type]]></phrase>
+  <phrase title="style_prop.th_triggerValue_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Trigger value]]></phrase>
+  <phrase title="style_prop_desc.thMaxReactionsMin" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The maximum amount of existing reactions that will be shown before they are turned into a minimal display.]]></phrase>
+  <phrase title="style_prop_desc.thReactionsAnimation" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[This will enable various animations when reacting to content.]]></phrase>
+  <phrase title="style_prop_desc.thReactionsDivider" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The character or word that is between the reaction and its count when viewing the content list.  Leave blank for no divider.]]></phrase>
+  <phrase title="style_prop_desc.thReactionsImageDimensions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[This will be applied to all normal images who have enabled using the style properties.]]></phrase>
+  <phrase title="style_prop_desc.th_reactions__barStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.th_reactions__listItemRightStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Styling for the right half of listed reactions]]></phrase>
+  <phrase title="style_prop_desc.th_reactions__listItemStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Style of a reaction and it's count]]></phrase>
+  <phrase title="style_prop_desc.th_reactions__showTitles" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.th_reactions__triggerStyle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.th_showReactionsPostbit_displayType_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.th_showReactionsPostbit_location_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.th_showReactionsPostbit_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[This will show the overall reactions that a user has received in a condensed format.]]></phrase>
+  <phrase title="style_prop_desc.th_triggerImageStyling_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.th_triggerType_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[The type of trigger that should be used for reactions]]></phrase>
+  <phrase title="style_prop_desc.th_triggerValue_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[The path to the image, or glyph class to be used]]></phrase>
+  <phrase title="style_prop_group.thReactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[TH] Reactions]]></phrase>
+  <phrase title="style_prop_group_desc.thReactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Style properties relating to the [TH] Reactions add-on.]]></phrase>
+  <phrase title="th_add_reaction_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Add reaction]]></phrase>
+  <phrase title="th_add_reaction_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Add reaction type]]></phrase>
+  <phrase title="th_allowed_forums_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Allowed forums]]></phrase>
+  <phrase title="th_at_least_x_reactions_needed_for_random_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You need at least {amount} reactions available to create a random reaction.]]></phrase>
+  <phrase title="th_bar_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Bar]]></phrase>
+  <phrase title="th_cannot_delete_default_reaction_types_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You cannot delete any of the default reaction types.]]></phrase>
+  <phrase title="th_content_handlers_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Choose which content this reaction will be usable on.]]></phrase>
+  <phrase title="th_content_handlers_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Content handlers]]></phrase>
+  <phrase title="th_content_react_count_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Content react count]]></phrase>
+  <phrase title="th_convert_likes_to_reactions_reactions" version_id="1000100" version_string="1.0.1"><![CDATA[Convert likes to reactions]]></phrase>
+  <phrase title="th_convert_reactions_to_likes_reactions" version_id="1000370" version_string="1.0.3"><![CDATA[Convert reactions to likes]]></phrase>
+  <phrase title="th_criteria_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Criteria]]></phrase>
+  <phrase title="th_css_class_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Enter a CSS class to use. This is to be used with icon packs like Font Awesome.]]></phrase>
+  <phrase title="th_css_class_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[CSS class]]></phrase>
+  <phrase title="th_css_code_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Enter the CSS code that will directly manipulate the HTML elements you have entered.<br>
+<b>You may also use {reactionId} in the content to insert the reaction ID for unique identification.</b>]]></phrase>
+  <phrase title="th_css_code_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[CSS code]]></phrase>
+  <phrase title="th_disabled_forums_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Disabled forums]]></phrase>
+  <phrase title="th_edit_reaction_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Edit reaction]]></phrase>
+  <phrase title="th_edit_reaction_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Edit reaction type]]></phrase>
+  <phrase title="th_enabled_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Choose whether this reaction will be visible to users.]]></phrase>
+  <phrase title="th_exceeded_daily_reacts_for_x_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You have exceeded the daily max for '{title}'.]]></phrase>
+  <phrase title="th_exceeded_x_reacts_for_content_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You have exceeded {count} reacts for this content.]]></phrase>
+  <phrase title="th_forum_cannot_be_allowed_and_disabled_same_time_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You cannot have forums allowed and disabled at the same time.]]></phrase>
+  <phrase title="th_general_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[General]]></phrase>
+  <phrase title="th_glyph_class_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Glpyh class]]></phrase>
+  <phrase title="th_html_code_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Enter the HTML structure of your reaction. This can then be manipulated with CSS entered below.<br>
+<b>You may also use {reactionId} in the content to insert the reaction ID for unique identification.</b>]]></phrase>
+  <phrase title="th_html_code_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[HTML code]]></phrase>
+  <phrase title="th_html_css_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[HTML/CSS]]></phrase>
+  <phrase title="th_image_dimensions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Image dimensions]]></phrase>
+  <phrase title="th_image_path_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[Image path]]></phrase>
+  <phrase title="th_image_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Image]]></phrase>
+  <phrase title="th_image_type_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The type of image to be displayed with the necessary styling options included.]]></phrase>
+  <phrase title="th_image_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Image type]]></phrase>
+  <phrase title="th_import_reactions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Import reactions]]></phrase>
+  <phrase title="th_like_wrapper_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The reaction will be stored within the default XenForo like handler.]]></phrase>
+  <phrase title="th_like_wrapper_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Like wrapper]]></phrase>
+  <phrase title="th_list_reactions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show all]]></phrase>
+  <phrase title="th_map_reaction_types_reactions" version_id="1000100" version_string="1.0.1"><![CDATA[Map reaction types]]></phrase>
+  <phrase title="th_map_reactions_reactions" version_id="1000100" version_string="1.0.1"><![CDATA[Map reactions]]></phrase>
+  <phrase title="th_max_per_day_user_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Choose how many times this reaction can be used in a single day per user. Please note that this value will not overwrite the max number set per user group.]]></phrase>
+  <phrase title="th_max_per_day_user_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Max per day per user]]></phrase>
+  <phrase title="th_members_who_reacted_conversation_message_x_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Members who reacted to conversation message #{position}]]></phrase>
+  <phrase title="th_members_who_reacted_message_x_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Members who reacted to message #{position}]]></phrase>
+  <phrase title="th_members_who_reacted_profile_post_comment_x_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Members who reacted to profile post comment #{position}]]></phrase>
+  <phrase title="th_members_who_reacted_profile_post_x_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Members who reacted to profile post #{position}]]></phrase>
+  <phrase title="th_modify_reactions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Modify Reactions]]></phrase>
+  <phrase title="th_no_one_has_reacted_this_content_yet_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[No one has reacted to this content yet.]]></phrase>
+  <phrase title="th_no_permission_to_react_reactions" version_id="1000292" version_string="1.0.2 Patch Level 2"><![CDATA[You do not have permission to react to this content.]]></phrase>
+  <phrase title="th_no_permission_to_remove_reacts_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You do not have permission to remove reactions.]]></phrase>
+  <phrase title="th_no_permission_to_view_reactions_reactions" version_id="1000270" version_string="1.0.2"><![CDATA[No permission to view reactions]]></phrase>
+  <phrase title="th_no_reactions_have_been_added_yet_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[No reactions have been added yet.]]></phrase>
+  <phrase title="th_no_reactions_types_have_been_added_yet_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[No reaction types have been added yet.]]></phrase>
+  <phrase title="th_normal_image_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Normal image]]></phrase>
+  <phrase title="th_only_one_reaction_can_like_wrapper_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Only one reaction can be used as a like wrapper.]]></phrase>
+  <phrase title="th_please_choose_color_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please choose a color.]]></phrase>
+  <phrase title="th_please_choose_valid_reaction_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please choose a valid reaction type.]]></phrase>
+  <phrase title="th_please_enter_css_class_for_reaction_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please enter one or more CSS classes for the reaction.]]></phrase>
+  <phrase title="th_please_enter_text_for_reaction_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please enter text for the reaction.]]></phrase>
+  <phrase title="th_please_select_at_least_one_reaction_to_export_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please select at least one reaction to export.]]></phrase>
+  <phrase title="th_prevent_unreact_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[When enabled the reaction cannot be removed from any content. Please note that if the user has the permission to unreact to all reactions this will not affect them.]]></phrase>
+  <phrase title="th_prevent_unreact_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Prevent unreact]]></phrase>
+  <phrase title="th_protected_reaction_type_id_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The reaction type ID you have defined is protected and cannot be used.]]></phrase>
+  <phrase title="th_publish_newsfeed_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[When enabled a newsfeed entry will be made about a reaction being given.]]></phrase>
+  <phrase title="th_publish_newsfeed_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Publish to newsfeed]]></phrase>
+  <phrase title="th_random_reaction_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[This will choose a random reaction to be used. Please note that this will respect the criteria and options of all reactions.]]></phrase>
+  <phrase title="th_random_reaction_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Random reaction]]></phrase>
+  <phrase title="th_react_x_cannot_be_removed_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The reaction `{title}` cannot be removed.]]></phrase>
+  <phrase title="th_react_x_content_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[React to {contentType} content]]></phrase>
+  <phrase title="th_reaction_disabled_for_forum_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The reaction is disabled for this forum.]]></phrase>
+  <phrase title="th_reaction_does_not_exist_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The reaction does not exist.]]></phrase>
+  <phrase title="th_reaction_text_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You may input text or an emoji to be displayed instead of an image.]]></phrase>
+  <phrase title="th_reaction_text_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reaction text]]></phrase>
+  <phrase title="th_reaction_type_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[This is the type of reaction this will be.<br>
+<b>Please note that changing this will require a reactions count rebuild.</b>]]></phrase>
+  <phrase title="th_reaction_type_id_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[This is the reaction type that will uniquely identify it.<br>
+<b>This cannot be changed once defined.</b>]]></phrase>
+  <phrase title="th_reaction_type_id_must_be_unique_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The reaction type ID must be unique.]]></phrase>
+  <phrase title="th_reaction_type_id_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reaction type ID]]></phrase>
+  <phrase title="th_reaction_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reaction type]]></phrase>
+  <phrase title="th_reaction_types_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reaction types]]></phrase>
+  <phrase title="th_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reactions]]></phrase>
+  <phrase title="th_reactions_exist_using_reaction_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You cannot delete a reaction type that is currently in use by one or more reactions.]]></phrase>
+  <phrase title="th_reactions_lc_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[reactions]]></phrase>
+  <phrase title="th_reactions_pre_import_explain_ml" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Choose a local XML file to import a list of reactions into your forum. Make sure any images or styling properties are uploaded as well.]]></phrase>
+  <phrase title="th_reacts_counted_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reacts counted]]></phrase>
+  <phrase title="th_rebuild_content_react_counts_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Rebuild content react counts]]></phrase>
+  <phrase title="th_rebuild_reacts_counted_status_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Rebuild reacts counted status]]></phrase>
+  <phrase title="th_rebuild_user_react_counts_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Rebuild user react counts]]></phrase>
+  <phrase title="th_send_alerts_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Users who receive a reaction will also get an alert showing them where it was given and who gave it.]]></phrase>
+  <phrase title="th_send_alerts_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Send alerts]]></phrase>
+  <phrase title="th_sprite_image_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Sprite image]]></phrase>
+  <phrase title="th_style_dimensions_hint_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Use the width and height defined within the style properties for whichever one you are currently using.]]></phrase>
+  <phrase title="th_style_dimensions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Style Dimensions]]></phrase>
+  <phrase title="th_styling_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Styling]]></phrase>
+  <phrase title="th_styling_type_explain_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[How the reaction will be styled and displayed.]]></phrase>
+  <phrase title="th_styling_type_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Styling type]]></phrase>
+  <phrase title="th_text_emoji_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Text / Emoji]]></phrase>
+  <phrase title="th_this_will_convert_likes_into_reactions" version_id="1000370" version_string="1.0.3"><![CDATA[This will convert XenForo likes into your default "Like handler" reaction for supported content types.]]></phrase>
+  <phrase title="th_this_will_convert_reactions_into_likes_reactions" version_id="1000370" version_string="1.0.3"><![CDATA[This will convert any "Like handler" reactions into default XenForo likes. Use this if you migrate from a system that didn't have their ratings stored as likes.]]></phrase>
+  <phrase title="th_undo_reactions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Undo Reactions]]></phrase>
+  <phrase title="th_unreact_x_content_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Unreact from {contentType} content]]></phrase>
+  <phrase title="th_user_react_count_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[User react count]]></phrase>
+  <phrase title="th_w_reacted_x_ys_post_in_the_thread_z_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to <a {posterParams}>{poster}'s post</a> in the thread {title}.]]></phrase>
+  <phrase title="th_x_reacted_y_to_your_message_in_conversation_z_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to your message in the conversation {title}.]]></phrase>
+  <phrase title="th_x_reacted_y_to_your_post_in_thread_z_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to a post in the thread {title}.]]></phrase>
+  <phrase title="th_x_reacted_y_your_comment_on_your_profile_post_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to <a {post_attributes}>your comment</a> on your profile post.]]></phrase>
+  <phrase title="th_x_reacted_y_your_comment_on_zs_profile_post_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to <a {post_attributes}>your comment</a> on {poster}'s profile post.]]></phrase>
+  <phrase title="th_x_reacted_y_your_post_in_the_thread_z_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to your post in the thread {title}.]]></phrase>
+  <phrase title="th_x_reacted_y_your_post_on_zs_profile_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to <a {post_attributes}>your post</a> on {profile}'s profile.]]></phrase>
+  <phrase title="th_x_reacted_y_your_status_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{name} reacted {reaction} to your <a {status_attributes}>status</a>.]]></phrase>
+  <phrase title="th_x_reacted_y_zs_comment_on_zzs_profile_post_reactions" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[{name} reacted {reaction} to <a {post_params}>{poster}'s comment</a> on {profile}'s profile post]]></phrase>
+  <phrase title="th_x_reacted_y_zs_post_on_your_profile_reactions" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[{name} reacted {reaction} to <a {post_params}>{poster}'s post</a> on your profile.]]></phrase>
+  <phrase title="th_x_reacted_y_zs_post_on_zzs_profile_reactions" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[{name} reacted {reaction} to <a {post_params}>{poster}'s post</a> on {profile}'s profile.]]></phrase>
+  <phrase title="th_x_reacted_y_zs_status_reactions" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[{name} reacted {reaction} to <a {status_params}>{poster}'s status</a>.]]></phrase>
+  <phrase title="th_x_reactions_y_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[{reactionType} reactions: {total}]]></phrase>
+  <phrase title="th_you_no_reacts_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[You have not reacted to this content yet.]]></phrase>
+  <phrase title="th_you_sure_you_want_to_react_x_to_this_content_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Are you sure you want to react {reaction} to this content?]]></phrase>
+  <phrase title="th_you_sure_you_want_to_unreact_this_content_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Are you sure you want to unreact all reactions from this content?]]></phrase>
+  <phrase title="th_you_sure_you_want_to_unreact_x_this_content_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Are you sure you want to unreact {reaction} from this content?]]></phrase>
+</phrases>

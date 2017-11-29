@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<admin_navigation>
+  <admin_navigation_entry navigation_id="reactionTypes" parent_navigation_id="reactionsGroup" display_order="20" link="reaction-types" admin_permission_id="thReactions" debug_only="0" hide_no_children="0"/>
+  <admin_navigation_entry navigation_id="reactions" parent_navigation_id="reactionsGroup" display_order="10" link="reactions" admin_permission_id="thReactions" debug_only="0" hide_no_children="0"/>
+  <admin_navigation_entry navigation_id="reactionsGroup" display_order="13000" icon="fa-smile-o" admin_permission_id="thReactions" debug_only="0" hide_no_children="0"/>
+</admin_navigation>

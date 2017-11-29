@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="alert_conversation_message_react" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[<xf:css src="th_reactions.less" />
+
+{{ phrase('th_x_reacted_y_to_your_message_in_conversation_z_reactions', {
+	'name': username_link($sender, false, {'defaultname': $alert.username}),
+	'title': '<a href="' . link('conversations/messages', $content) . '">' . $content.Conversation.title . '</a>',
+	'reaction': reaction($alert.extra_data.reaction_id, 'alert')
+}) }}]]></template>
+  <template type="public" title="alert_post_react" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:css src="th_reactions.less" />
+
+{{ phrase('th_x_reacted_y_to_your_post_in_thread_z_reactions', {
+	'name': username_link($sender, false, {'defaultname': $alert.username}),
+	'reaction': reaction($alert.extra_data.reaction_id, 'alert'),
+	'title': '<a href="' . link('posts', $content) . '" class="fauxBlockLink-blockLink">' . prefix('thread', $content.Thread) . $content.Thread.title . '</a>'
+}) }}]]></template>
+  <template type="public" title="alert_profile_post_comment_react" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:css src="th_reactions.less" />
+
+<xf:if is="$xf.visitor.user_id == $content.ProfilePost.user_id">
+	{{ phrase('th_x_reacted_y_your_comment_on_your_profile_post_reactions', {
+		'name': username_link($user, false, {'defaultname': $alert.username}),
+		'reaction': reaction($alert.extra_data.reaction_id, 'alert'),
+		'post_attributes': 'href="' . link('profile-posts/comments', $content) . '" class="fauxBlockLink-blockLink"'
+	}) }}
+<xf:else />
+	{{ phrase('th_x_reacted_y_your_comment_on_zs_profile_post_reactions', {
+		'name': username_link($user, false, {'defaultname': $alert.username}),
+		'reaction': reaction($alert.extra_data.reaction_id, 'alert'),
+		'post_attributes': 'href="' . link('profile-posts/comments', $content) . '" class="fauxBlockLink-blockLink"',
+		'poster': $content.ProfilePost.username
+	}) }}
+</xf:if>]]></template>
+  <template type="public" title="alert_profile_post_react" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:css src="th_reactions.less" />
+
+<xf:if is="$xf.visitor.user_id == $content.ProfileUser.user_id">
+	{{ phrase('th_x_reacted_y_your_status_reactions', {
+		'name': username_link($user, false, {'defaultname': $alert.username}),
+		'reaction': reaction($alert.extra_data.reaction_id, 'alert'),
+		'status_attributes': 'href="' . link('profile-posts', $content) . '" class="fauxBlockLink-blockLink"'
+	}) }}
+<xf:else />
+	{{ phrase('th_x_reacted_y_your_post_on_zs_profile_reactions', {
+		'name': username_link($user, false, {'defaultname': $alert.username}),
+		'reaction': reaction($alert.extra_data.reaction_id, 'alert'),
+		'post_attributes': 'href="' . link('profile-posts', $content) . '" class="fauxBlockLink-blockLink"',
+		'profile': $content.ProfileUser.username
+	}) }}
+</xf:if>]]></template>
+  <template type="public" title="news_feed_item_post_react" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:css src="th_reactions.less" />
+
+<div class="contentRow-title">
+	<xf:if is="$content.user_id == $xf.visitor.user_id">
+		{{ phrase('th_x_reacted_y_your_post_in_the_thread_z_reactions', {
+		'name': username_link($user, false, {'defaultname': $fallbackName}),
+		'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed'),
+		'title': '<a href="' . link('posts', $content) . '">' . prefix('thread', $content.Thread) . $content.Thread.title . '</a>'
+		}) }}
+		<xf:else />
+		{{ phrase('th_w_reacted_x_ys_post_in_the_thread_z_reactions', {
+		'name': username_link($user, false, {'defaultname': $fallbackName}),
+		'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed'),
+		'posterParams': 'href="' . link('posts', $content) . '"',
+		'poster': $content.username,
+		'title': '<a href="' . link('posts', $content) . '">' . prefix('thread', $content.Thread) . $content.Thread.title . '</a>'
+		}) }}
+	</xf:if>
+</div>
+
+<div class="contentRow-snippet">{{
+	snippet($content.message, $xf.options.newsFeedMessageSnippetLength, {'stripQuote': true})
+	}}</div>
+
+<div class="contentRow-minor"><xf:date time="{$newsFeed.event_date}" /></div>]]></template>
+  <template type="public" title="news_feed_item_profile_post_comment_react" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[<xf:css src="th_reactions.less" />
+
+<xf:set var="$fallbackName" value="{{ phrase('unknown_member') }}" />
+
+<div class="contentRow-title">
+	<xf:if is="$content.user_id == $xf.visitor.user_id">
+		{{ phrase('th_x_reacted_y_your_comment_on_zs_profile_post_reactions', {
+			'name': username_link($user, false, {'defaultname': $fallbackName}),
+			'post_attributes': 'href="' . link('profile-posts/comments', $content) . '"',
+			'poster': $content.ProfilePost.username,
+			'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+		}) }}
+		<xf:elseif is="$content.ProfilePost.user_id == $xf.visitor.user_id" />
+		{{ phrase('th_x_reacted_y_your_comment_on_zs_profile_post_reactions', {
+			'name': username_link($user, false, {'defaultname': $fallbackName}),
+			'post_attributes': 'href="' . link('profile-posts/comments', $content) . '"',
+			'poster': $content.ProfilePost.username,
+			'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+			}) }}
+		<xf:else />
+		{{ phrase('th_x_reacted_y_zs_comment_on_zzs_profile_post_reactions', {
+			'name': username_link($user, false, {'defaultname': $fallbackName}),
+			'post_params': 'href="' . link('profile-posts/comments', $content) . '"',
+			'poster': $content.username,
+			'profile': $content.ProfilePost.username,
+			'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+		}) }}
+	</xf:if>
+</div>
+
+<div class="contentRow-snippet">{{
+	snippet($content.message, $xf.options.newsFeedMessageSnippetLength, {'stripQuote': true})
+	}}</div>
+
+<div class="contentRow-minor"><xf:date time="{$newsFeed.event_date}" /></div>]]></template>
+  <template type="public" title="news_feed_item_profile_post_react" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[<xf:css src="th_reactions.less" />
+
+<xf:set var="$fallbackName" value="{{ phrase('unknown_member') }}" />
+
+<div class="contentRow-title">
+	<xf:if is="$content.user_id == $content.profile_user_id">
+		<xf:if is="$content.user_id == $xf.visitor.user_id">
+			{{ phrase('th_x_reacted_y_your_status_reactions', {
+				'name': username_link($liker, false, {'defaultname': $fallbackName}),
+				'status_attributes': 'href="' . link('profile-posts', $profilePost) . '"',
+				'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+			}) }}
+			<xf:else />
+			{{ phrase('th_x_reacted_y_zs_status_reactions', {
+				'name': username_link($user, false, {'defaultname': $fallbackName}),
+				'status_params': 'href="' . link('profile-posts', $content) . '"',
+				'poster': $content.username,
+				'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+			}) }}
+		</xf:if>
+		<xf:else />
+		<xf:if is="$content.user_id == $xf.visitor.user_id">
+			{{ phrase('th_x_reacted_y_your_post_on_zs_profile_reactions', {
+				'name': username_link($user, false, {'defaultname': $fallbackName}),
+				'post_attributes': 'href="' . link('profile-posts', $content) . '"',
+				'profile': $content.ProfileUser.username,
+				'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+			}) }}
+			<xf:elseif is="$content.ProfileUser.user_id == $xf.visitor.user_id" />
+			{{ phrase('th_x_reacted_y_zs_post_on_your_profile_reactions', {
+				'name': username_link($user, false, {'defaultname': $fallbackName}),
+				'post_params': 'href="' . link('profile-posts', $content) . '"',
+				'poster': $content.username,
+				'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+			}) }}
+			<xf:else />
+			{{ phrase('th_x_reacted_y_zs_post_on_zzs_profile_reactions', {
+				'name': username_link($user, false, {'defaultname': $fallbackName}),
+				'post_params': 'href="' . link('profile-posts', $content) . '"',
+				'poster': $content.username,
+				'profile': $content.ProfileUser.username,
+				'reaction': reaction($newsFeed.extra_data.reaction_id, 'newsfeed')
+			}) }}
+		</xf:if>
+	</xf:if>
+</div>
+
+<div class="contentRow-snippet">{{
+	snippet($content.message, $xf.options.newsFeedMessageSnippetLength, {'stripQuote': true})
+	}}</div>
+
+<div class="contentRow-minor"><xf:date time="{$newsFeed.event_date}" /></div>]]></template>
+  <template type="public" title="th_confirm_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ $isReacted ? phrase('th_unreact_x_content_reactions', {'contentType': $contentType}) : phrase('th_react_x_content_reactions', {'contentType': $contentType}) }}</xf:title>
+
+<xf:form action="{$confirmUrl}" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:inforow rowtype="confirm">
+				<xf:if is="$isReacted">
+					<xf:if is="$reactionId">
+						{{ phrase('th_you_sure_you_want_to_unreact_x_this_content_reactions', {
+							'reaction': reaction($reactionId, 'alert')
+						}) }}
+					<xf:else />
+						{{ phrase('th_you_sure_you_want_to_unreact_this_content_reactions') }}
+					</xf:if>
+				<xf:else />
+					{{ phrase('th_you_sure_you_want_to_react_x_to_this_content_reactions', {
+						'reaction': reaction($reactionId, 'alert')
+					}) }}
+					<xf:if is="$contentTitle"><strong>{$contentTitle}</strong></xf:if>
+				</xf:if>
+			</xf:inforow>
+		</div>
+
+		<xf:submitrow icon="save" rowtype="simple" />
+	</div>
+</xf:form>]]></template>
+  <template type="public" title="th_display_bar_internal_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="{$reactionContentList}">
+	<xf:if contentcheck="true">
+		<div class="reactions-left">
+			<xf:contentcheck>
+				{$reactionContentList|raw}
+			</xf:contentcheck>
+		</div>
+	</xf:if>
+</xf:if>
+
+
+<xf:if is="{$reactionList}">
+	<xf:if contentcheck="true">
+		<div class="reactions-right">
+			<xf:contentcheck>
+				{$reactionList|raw}
+			</xf:contentcheck>
+		</div>
+	</xf:if>
+</xf:if>
+]]></template>
+  <template type="public" title="th_display_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[<xf:macro name="reactions_bar" arg-type="!" arg-id="!" arg-content="!">
+	<xf:css src="th_reactions.less" />
+	<xf:js src="themehouse/reactions/react.js" addon="ThemeHouse/Reactions"/>
+
+	<xf:if contentcheck="true">
+		<div class="reactions-bar reactions-bar--{{ property('thReactionsAnimation') }} content" id="reactions-bar-{{ $content.{$id} }}">
+			<xf:contentcheck>
+				<xf:include template="th_display_bar_internal_reactions">
+					<xf:set var="$reactionContentList" value="{{ reaction_content_list($content, $content.getReactUsers(), [$type, $content.{$id}, $content.user_id], true, property('thMaxReactionsMin')) }}" />
+					<xf:set var="$reactionList" value="{{ reaction_list($content, $content.getReactUsers(), [$type, $content.{$id}, $content.user_id]) }}" />
+				</xf:include>
+			</xf:contentcheck>
+		</div>
+	</xf:if>
+</xf:macro>
+
+<xf:macro name="reactions_bit_list" arg-type="!" arg-id="!" arg-content="!" arg-reactUsers="!">
+	<xf:css src="th_reactions.less" />
+
+	<xf:if contentcheck="true">
+		<div class="reactions-bar bit-list" id="reactions-bar-{{ $content.{$id} }}">
+			<xf:contentcheck>
+				<xf:include template="th_display_bar_internal_reactions">
+					<xf:set var="$reactionContentList" value="{{ reaction_content_list($content, $reactUsers, [$type, $content.{$id}, $content.user_id], false, 3, '', true) }}" />
+				</xf:include>
+			</xf:contentcheck>
+		</div>
+	</xf:if>
+</xf:macro>
+
+<xf:macro name="react_postbit" arg-reacts="!" arg-reactsCount="!" arg-displayType="!">
+	<xf:if is="$displayType === 'bar'">
+		<xf:macro name="react_total_bar" arg-reacts="{$reacts}" arg-reactsCount="{$reactsCount}" />
+		<xf:else />
+		<xf:macro name="react_total_text" arg-reacts="{$reacts}" arg-reactsCount="{$reactsCount}" />
+	</xf:if>
+</xf:macro>
+
+<xf:macro name="react_total_text" arg-reacts="!" arg-reactsCount="!">
+	<xf:if contentcheck="true">
+		<div class="reacts_total_text">
+			<div class="pairs pairs--justified">
+				<dt>{{ phrase('th_reactions') }}</dt>
+				<dd>
+					<xf:contentcheck>
+						<xf:foreach loop="$xf.reactionTypes" key="$reactionTypeId" value="$reactionType">
+							<xf:set var="$rtTotal" value="{{ is_array($reacts.{$reactionTypeId}) ? count($reacts.{$reactionTypeId}) : $reacts.{$reactionTypeId} }}" />
+							<span data-xf-init="tooltip" title="{$reactionType.title}" class="reacts_total_text__reactionType reacts_total_text__reactionType--{$reactionTypeId}" style="color: {$reactionType.color}">{$rtTotal|number}</span>
+						</xf:foreach>
+					</xf:contentcheck>
+				</dd>
+			</div>
+		</div>
+	</xf:if>
+</xf:macro>
+
+<xf:macro name="react_total_bar" arg-reacts="!" arg-reactsCount="!" arg-class="" arg-width="100%">
+	<xf:if is="$reactsCount">
+		<xf:if contentcheck="true">
+			<div class="react_total_bar {{ $class }}">
+				<xf:contentcheck>
+					<xf:comment>Removed new lines since they break the total bar!</xf:comment>
+					<xf:foreach loop="$xf.reactionTypes" key="$reactionTypeId" value="$reactionType">
+						<xf:set var="$rtTotal">{{ is_array($reacts.{$reactionTypeId}) ? count($reacts.{$reactionTypeId}) : $reacts.{$reactionTypeId} }}</xf:set>
+						<xf:set var="$segmentWidth" value="{{ ((is_array($reacts.{$reactionTypeId}) ? count($reacts.{$reactionTypeId}) : $reacts.{$reactionTypeId}) / {$reactsCount}) * 100 }}%" />
+						<div class="react_bar_segment react_bar_{{ $reactionTypeId }} Tooltip" title="{{ phrase('th_x_reactions_y_reactions', {'reactionType': $reactionType.title, 'total': (empty($rtTotal) ? '0' : $rtTotal) }) }}" style="background-color: {{ $reactionType.color }}; width: {$segmentWidth}" data-xf-init="tooltip"></div>
+					</xf:foreach>
+				</xf:contentcheck>
+			</div>
+		</xf:if>
+	</xf:if>
+</xf:macro>
+]]></template>
+  <template type="admin" title="th_import_config_dpr_reactions" version_id="1000292" version_string="1.0.2 Patch Level 2"><![CDATA[<h3 class="block-header">
+	{{ phrase('th_map_reactions_reactions') }}
+</h3>
+<xf:foreach loop="$postRatings" value="$rating">
+	<xf:selectrow label="{$rating.title}" name="config[reaction_map][{$rating.id}]">
+		<xf:option value="0">{{ phrase('th_add_reaction_reactions') }}</xf:option>
+		<xf:foreach loop="$reactions" value="$reaction">
+			<xf:option value="{$reaction.reaction_id}" selected="{{ ($reaction.title == $rating.title) ? 1 : 0 }}">{$reaction.title}</xf:option>
+		</xf:foreach>
+	</xf:selectrow>
+</xf:foreach>
+
+<h3 class="block-header">
+	{{ phrase('th_map_reaction_types_reactions') }}
+</h3>
+
+<xf:macro name="reaction_type_map_selectrow" arg-label="Positive" arg-name="config[reaction_type_map][1]" arg-value="positive" arg-reactionTypes="{$reactionTypes}" />
+<xf:macro name="reaction_type_map_selectrow" arg-label="Neutral" arg-name="config[reaction_type_map][0]" arg-value="neutral" arg-reactionTypes="{$reactionTypes}" />
+<xf:macro name="reaction_type_map_selectrow" arg-label="Negative" arg-name="config[reaction_type_map][-1]" arg-value="negative" arg-reactionTypes="{$reactionTypes}" />
+
+<xf:macro name="reaction_type_map_selectrow" arg-label="!" arg-name="!" arg-value="!" arg-reactionTypes="!">
+	<xf:selectrow name="{$name}" label="{$label}" value="{$value}">
+		<xf:foreach loop="$reactionTypes" value="$reactionType">
+			<xf:option value="{$reactionType.reaction_type_id}">{$reactionType.title}</xf:option>
+		</xf:foreach>
+	</xf:selectrow>
+</xf:macro>
+]]></template>
+  <template type="admin" title="th_import_step_config_dpr_reactions" version_id="1000100" version_string="1.0.1"><![CDATA[]]></template>
+  <template type="public" title="th_reaction_content_list_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[<ul>
+	<xf:foreach loop="$reacts" value="$react" if="$reacts">
+		<li class="th_reactions__listItem">
+			<xf:if is="$react.canReact">
+				<a href="{$react.url}" data-xf-click="react" data-reaction-bar="< .message | .reactions-bar">{$react.rendered}</a>
+				<xf:else />
+				{$react.rendered}
+			</xf:if>
+
+			<xf:if is="{{ property('th_reactions__showTitles') }}">
+				<xf:if is="$react.title">
+					<span class="reaction-title">{$react.title}</span>
+				</xf:if>
+			</xf:if>
+			<xf:if is="{{ property('thReactionsDivider') != '' }}">
+				<span class="reaction-divider"> {{ property('thReactionsDivider') }} </span>
+			</xf:if>
+			<span class="reaction-count">{$react.count}</span>
+		</li>
+	</xf:foreach>
+
+	<xf:if is="$reactionListUrl">
+		<li>
+			<a class="list-reacts" href="{$reactionListUrl}" title="{{ phrase('th_list_reactions_reactions') }}" data-xf-click="overlay" data-nocache="true">{{ phrase('th_list_reactions_reactions') }}</a>
+		</li>
+	</xf:if>
+</ul>
+]]></template>
+  <template type="admin" title="th_reaction_delete_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ phrase('confirm_action') }}</xf:title>
+
+<xf:form action="{{ link('reactions/delete', $reaction) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:inforow rowtype="confirm">
+				{{ phrase('please_confirm_that_you_want_to_delete_following:') }}
+				<strong>{{ reaction($reaction) }}<a href="{{ link('reactions/edit', $reaction) }}">{$reaction.title}</a></strong>
+			</xf:inforow>
+		</div>
+		<xf:submitrow rowtype="simple" icon="delete" />
+	</div>
+</xf:form>]]></template>
+  <template type="admin" title="th_reaction_edit_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$reaction.isInsert()">
+	<xf:title>{{ phrase('th_add_reaction_reactions') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('th_edit_reaction_reactions') }}: {$reaction.title}</xf:title>
+</xf:if>
+
+<xf:css src="public:th_reactions.less" />
+
+<xf:pageaction if="$reaction.isUpdate()">
+	<span class="js-reactionPreview"></span>
+	<xf:button href="{{ link('reactions/delete', $reaction) }}" icon="delete" overlay="true" />
+</xf:pageaction>
+
+<xf:form action="{{ link('reactions/save', $reaction) }}" ajax="true" class="block-container">
+	<h2 class="block-tabHeader tabs hScroller" data-xf-init="tabs h-scroller" role="tablist">
+		<span class="hScroller-scroll">
+			<a class="tabs-tab is-active" role="tab" tabindex="0" data-controls="reaction-general">{{ phrase('th_general_reactions') }}</a>
+			<a class="tabs-tab" role="tab" tabindex="0" data-controls="reaction-styling">{{ phrase('th_styling_reactions') }}</a>
+			<a class="tabs-tab" role="tab" tabindex="0" data-controls="reaction-criteria">{{ phrase('th_criteria_reactions') }}</a>
+			<xf:macro template="helper_criteria" name="user_tabs" />
+			<a class="tabs-tab" role="tab" tabindex="0" data-controls="reaction-options">{{ phrase('options') }}</a>
+		</span>
+	</h2>
+
+	<ul class="tabPanes">
+		<li class="is-active" role="tabpanel" id="reaction-general">
+			<div class="block-body">
+				<xf:textboxrow label="{{ phrase('title') }}" name="title" value="{$reaction.title}" />
+
+				<hr class="formRowSep" />
+
+				<xf:textboxrow label="{{ phrase('display_order') }}" name="display_order"
+							   value="{$reaction.display_order}" min="0" step="10" type="number" />
+
+				<xf:selectrow label="{{ phrase('th_reaction_type_reactions') }}" name="reaction_type_id" value="{$reaction.reaction_type_id}">
+					<xf:option />
+					<xf:options source="{$reactionTypes}" />
+					<xf:explain>{{ phrase('th_reaction_type_explain_reactions') }}</xf:explain>
+				</xf:selectrow>
+
+				<hr class="formRowSep" />
+
+				<xf:checkboxrow>
+					<xf:option name="enabled" label="{{ phrase('enabled') }}" selected="$reaction.enabled" hint="{{ phrase('th_enabled_hint_reactions') }}" />
+					<xf:option name="random" label="{{ phrase('th_random_reaction_reactions') }}" selected="$reaction.random" hint="{{ phrase('th_random_reaction_hint_reactions') }}" />
+					<xf:option name="like_wrapper" label="{{ phrase('th_like_wrapper_reactions') }}" selected="$reaction.like_wrapper" hint="{{ phrase('th_like_wrapper_hint_reactions') }}" />
+				</xf:checkboxrow>
+			</div>
+		</li>
+
+		<li role="tabpanel" id="reaction-styling">
+			<div class="block-body">
+				<xf:radiorow label="{{ phrase('th_styling_type_reactions') }}" name="styling_type">
+					<xf:option value="image" label="{{ phrase('th_image_reactions') }}"
+						selected="{$reaction.styling_type} == 'image'" data-xf-init="disabler"
+						data-container=".js-imageContainer" data-hide="yes" />
+					<xf:option value="text" label="{{ phrase('th_text_emoji_reactions') }}"
+						selected="{$reaction.styling_type} == 'text'" data-xf-init="disabler"
+						data-container=".js-textContainer" data-hide="yes" />
+					<xf:option value="css_class" label="{{ phrase('th_css_class_reactions') }}"
+						selected="{$reaction.styling_type} == 'css_class'" data-xf-init="disabler"
+						data-container=".js-CSSClassContainer" data-hide="yes" />
+					<xf:option value="html_css" label="{{ phrase('th_html_css_reactions') }}"
+						selected="{$reaction.styling_type} == 'html_css'" data-xf-init="disabler"
+						data-container=".js-HTMLCSSClassContainer" data-hide="yes" />
+					<xf:explain>{{ phrase('th_styling_type_explain_reactions') }}</xf:explain>
+				</xf:radiorow>
+
+				<div class="js-imageContainer">
+					<xf:textboxrow label="{{ phrase('image_replacement_url') }}" name="image_url" value="{$reaction.image_url}" />
+
+					<div class="js-image2x">
+						<xf:textboxrow label="{{ phrase('2x_image_replacement_url') }}" name="image_url_2x" value="{$reaction.image_url_2x}">
+							<xf:hint>{{ phrase('optional') }}</xf:hint>
+							<xf:explain>{{ phrase('2x_image_replacement_url_explain') }}</xf:explain>
+						</xf:textboxrow>
+					</div>
+
+					<xf:radiorow label="{{ phrase('th_image_type_reactions') }}" name="image_type">
+						<xf:option value="normal" label="{{ phrase('th_normal_image_reactions') }}"
+							selected="{$reaction.image_type} == 'normal'" data-xf-init="disabler"
+							data-container=".js-imageNormalContainer, .js-image2x" data-hide="yes" />
+						<xf:option value="sprite" label="{{ phrase('th_sprite_image_reactions') }}"
+							selected="{$reaction.image_type} == 'sprite'" data-xf-init="disabler"
+							data-container=".js-imageSpriteContainer" data-hide="yes" />
+						<xf:explain>{{ phrase('th_image_type_explain_reactions') }}</xf:explain>
+					</xf:radiorow>
+
+					<div class="js-imageNormalContainer">
+						<xf:formrow label="{{ phrase('th_image_dimensions_reactions') }}" rowtype="input">
+							<div class="inputGroup">
+								<xf:textbox name="styling[image_normal][w]" value="{$reaction.styling.image_normal.w}" min="1"
+											title="{{ phrase('width') }}" type="number" data-xf-init="tooltip" />
+								<span class="inputGroup-text">x</span>
+								<xf:textbox name="styling[image_normal][h]" value="{$reaction.styling.image_normal.h}" min="1"
+											title="{{ phrase('height') }}" type="number" data-xf-init="tooltip" />
+								<span class="inputGroup-text">|</span>
+								<xf:textbox name="styling[image_normal][u]" value="{$reaction.styling.image_normal.u}"
+											placeholder="{{ phrase('unit') }}" />
+							</div>
+						</xf:formrow>
+
+						<xf:checkboxrow>
+							<xf:option name="styling[image_normal][style_dimensions]" label="{{ phrase('th_style_dimensions_reactions') }}" selected="{$reaction.styling.image_normal.style_dimensions}" hint="{{ phrase('th_style_dimensions_hint_reactions') }}" />
+						</xf:checkboxrow>
+					</div>
+
+					<div class="js-imageSpriteContainer">
+						<xf:formrow label="{{ phrase('sprite_dimensions') }}" rowtype="input">
+							<div class="inputGroup">
+								<xf:textbox name="styling[image_sprite][w]" value="{$reaction.styling.image_sprite.w}" min="1"
+											title="{{ phrase('width') }}" type="number" data-xf-init="tooltip" />
+								<span class="inputGroup-text">x</span>
+								<xf:textbox name="styling[image_sprite][h]" value="{$reaction.styling.image_sprite.h}" min="1"
+											title="{{ phrase('height') }}" type="number" data-xf-init="tooltip" />
+								<span class="inputGroup-text">{{ phrase('units_pixels') }}</span>
+							</div>
+						</xf:formrow>
+
+						<xf:formrow label="{{ phrase('sprite_position') }}" rowtype="input">
+							<div class="inputGroup">
+								<xf:textbox name="styling[image_sprite][x]" value="{$reaction.styling.image_sprite.x}"
+											title="{{ phrase('background_position_x') }}" type="number" data-xf-init="tooltip" />
+								<span class="inputGroup-text">x</span>
+								<xf:textbox name="styling[image_sprite][y]" value="{$reaction.styling.image_sprite.y}"
+											title="{{ phrase('background_position_y') }}" type="number" data-xf-init="tooltip" />
+								<span class="inputGroup-text">{{ phrase('units_pixels') }}</span>
+							</div>
+						</xf:formrow>
+
+						<xf:textboxrow label="{{ phrase('unit') }}" name="styling[image_sprite][u]" value="{$reaction.styling.image_sprite.u}" />
+	
+						<xf:textboxrow label="{{ phrase('background_size') }}" name="styling[image_sprite][bs]" value="{$reaction.styling.image_sprite.bs}">
+							<xf:explain>{{ phrase('background_size_explain') }}</xf:explain>
+						</xf:textboxrow>
+					</div>
+				</div>
+
+				<div class="js-textContainer">
+					<xf:textboxrow label="{{ phrase('th_reaction_text_reactions') }}" name="reaction_text" value="{$reaction.reaction_text}">
+						<xf:explain>{{ phrase('th_reaction_text_explain_reactions') }}</xf:explain>	
+					</xf:textboxrow>
+				</div>
+
+				<div class="js-CSSClassContainer">
+					<xf:textboxrow label="{{ phrase('th_css_class_reactions') }}" name="reaction_text" value="{$reaction.reaction_text}">
+						<xf:explain>{{ phrase('th_css_class_explain_reactions') }}</xf:explain>	
+					</xf:textboxrow>
+				</div>
+
+				<div class="js-HTMLCSSClassContainer">
+					<div class="block-body" data-xf-init="code-editor-switcher-container" data-template-suffix-mode="1">
+						<xf:codeeditorrow name="styling[html_css][html]" value="{$reaction.styling.html_css.html}" label="{{ phrase('th_html_code_reactions') }}"
+										 mode="html" rowclass="js-codeEditorContainer js-htmlEditorContainer"
+										 data-submit-selector=".js-submitButton">
+							<xf:explain>
+								{{ phrase('th_html_code_explain_reactions') }}
+							</xf:explain>
+						</xf:codeeditorrow>
+					</div>
+
+					<hr class="formRowSep" />
+
+					<div class="block-body" data-xf-init="code-editor-switcher-container" data-template-suffix-mode="1">
+						<xf:codeeditorrow name="styling[html_css][css]" value="{$reaction.styling.html_css.css}" label="{{ phrase('th_css_code_reactions') }}"
+										 mode="css" rowclass="js-codeEditorContainer js-cssEditorContainer"
+										 data-submit-selector=".js-submitButton">
+							<xf:explain>
+								{{ phrase('th_css_code_explain_reactions') }}
+							</xf:explain>
+						</xf:codeeditorrow>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li role="tabpanel" id="reaction-criteria">
+			<div class="block-body">
+				<xf:checkboxrow rowid="reactHandler" label="{{ phrase('th_content_handlers_reactions') }}"
+					name="react_handler[]" listclass="listColumns"
+					value="{$reaction.react_handler}">
+					<xf:hint><label><input type="checkbox" name="react_handler_all" value="1" data-xf-init="check-all"
+						data-container="#reactHandler" /> {{ phrase('select_all') }}</label></xf:hint>
+					<xf:explain>{{ phrase('th_content_handlers_explain_reactions') }}</xf:explain>
+					<xf:foreach loop="$reactHandlers" key="$id" value="$title">
+						<xf:option value="{{ $id }}" label="{{ $title }}"
+								   selected="{$reaction.react_handler.{$id}}" data-xf-init="react-handler"
+								   data-href="{{ link('reactions/handler') }}"
+								   data-container=".js-reactHandler-{{ $id }}" data-hide="yes" />
+					</xf:foreach>
+				</xf:checkboxrow>
+
+				<xf:foreach loop="$reactHandlers" key="$id" value="$title">
+					<div class="js-reactHandler-{{ $id }}">
+						 {{ $reactHandlersOptions.{$id}|raw }}
+					</div>
+				</xf:foreach>
+			</div>
+		</li>
+
+		<xf:macro template="helper_criteria" name="user_panes"
+				  arg-criteria="{{ $userCriteria.getCriteriaForTemplate() }}"
+				  arg-data="{{ $userCriteria.getExtraTemplateData() }}" />
+
+		<li role="tabpanel" id="reaction-general">
+			<div class="block-body">
+				<xf:checkboxrow>
+					<xf:option name="options[alerts]" label="{{ phrase('th_send_alerts_reactions') }}" selected="$reaction.options.alerts" hint="{{ phrase('th_send_alerts_hint_reactions') }}" />
+					<xf:option name="options[newsfeed]" label="{{ phrase('th_publish_newsfeed_reactions') }}" selected="$reaction.options.newsfeed" hint="{{ phrase('th_publish_newsfeed_hint_reactions') }}" />
+					<xf:option name="options[prevent_unreact]" label="{{ phrase('th_prevent_unreact_reactions') }}" selected="$reaction.options.prevent_unreact" hint="{{ phrase('th_prevent_unreact_hint_reactions') }}" />
+					<xf:option label="{{ phrase('th_max_per_day_user_reactions') }}" selected="{$reaction.options.user_max_per_day}" hint="{{ phrase('th_max_per_day_user_hint_reactions') }}">
+						<xf:textbox label="" name="options[user_max_per_day]" value="{$reaction.options.user_max_per_day}" min="1" step="1" type="number" />
+					</xf:option>
+				</xf:checkboxrow>
+			</div>
+		</li>
+
+		<xf:submitrow class="js-submitButton" sticky="true" icon="save">
+			<xf:html>
+				<xf:button type="submit" icon="save" name="exit" accesskey="s">{{ phrase('save_and_exit') }}</xf:button>
+			</xf:html>
+		</xf:submitrow>
+	</ul>
+</xf:form>
+
+<xf:js>
+/** @param {jQuery} $ jQuery Object */
+!function($, window, document)
+{
+	"use strict";
+
+    XF.ReactHandler = XF.extend(XF.Disabler, {
+        __backup: {
+            'click': '_click'
+        },
+
+        options: $.extend({}, XF.Disabler.prototype.options, {
+            href: ''
+        }),
+
+        click: function()
+        {
+            if (this.$target.is(':checked:enabled') && this.options.href) {
+                if (this.xhr)
+                {
+                    this.xhr.abort();
+                }
+
+                this.xhr = XF.ajax(
+                    'post',
+                    this.options.href,
+                    { react_handler_id: this.$target.val() },
+                    $.proxy(this, 'showReactHandlerOptions'),
+                    { global: false, error: true }
+                );
+            }
+
+            this._click();
+        },
+
+		showReactHandlerOptions: function(results)
+		{
+			if (this.xhr)
+			{
+				this.xhr = false;
+			}
+
+            var $container = this.$container;
+
+            if (results.options_rendered)
+            {
+                $container.html(results.options_rendered);
+            }
+        },
+    });
+
+	XF.Element.register('react-handler', 'XF.ReactHandler');
+}
+(jQuery, window, document);
+
+$(document).ready(function () {
+	$('.js-codeEditorContainer .CodeMirror').click(function() {
+		var codeMirror = $(this)[0].CodeMirror;
+		codeMirror.refresh();
+	});
+
+	$("input").on("input", debounce(function () {
+		generatePreview();
+	}, 500));
+
+	$('.js-codeEditorContainer .CodeMirror').each(function () {
+		var codeMirror = $(this)[0].CodeMirror;
+		codeMirror.on('change', function(cm, change) {
+			generatePreview();
+		});
+	});
+
+	function debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+	
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
+	};
+
+	function generatePreview() {
+		var output = '<span class="reaction" title="' + {$reaction.title|json} + '">';
+		var css = '';
+
+		var reactionId = "{$reaction.reaction_id|json}";
+
+		var stylingType = $("input[name='styling_type']:checked").val();
+		if (stylingType == 'image') {
+			var imageUrl = $("input[name='image_url']").val();
+
+			var imageType = $("input[name='image_type']:checked").val();
+			if (imageType == 'normal') {
+				var width = $("input[name='styling[image_normal][w]']").val();
+				var height = $("input[name='styling[image_normal][h]']").val();
+				var unit = $("input[name='styling[image_normal][u]']").val();
+
+				output += '<img src="' + imageUrl + '" width="' + width + unit + '" height="' + height + unit + '" />';
+			}
+
+			if (imageType == 'sprite') {
+				var width = $("input[name='styling[image_sprite][w]']").val();
+				var height = $("input[name='styling[image_sprite][h]']").val();
+				var unit = $("input[name='styling[image_sprite][u]']").val();
+				var bsX = $("input[name='styling[image_sprite][x]']").val();
+				var bsY = $("input[name='styling[image_sprite][y]']").val();
+
+				var reactionClass = 'reaction--sprite reaction--sprite' + reactionId;
+
+				output += '<img class="' + reactionClass + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width: ' + width + unit + '; height: ' + height + unit + '; background: url(\'' + imageUrl + '\') no-repeat ' + bsX + unit + ' ' + bsY + unit + ';" />';
+			}
+		}
+
+		if (stylingType == 'text') {
+			var reactionText = $("input[name='reaction_text']:visible").val();
+
+			output += reactionText;
+		}
+
+		if (stylingType == 'css_class') {
+			var reactionText = $("input[name='reaction_text']:visible").val();
+
+			output += '<i class="' + reactionText + '"></i>';
+		}
+
+		output += '</span>';
+
+		if (stylingType == 'html_css') {
+			var htmlCM = $('.js-htmlEditorContainer .CodeMirror')[0].CodeMirror;
+			var cssCM = $('.js-cssEditorContainer .CodeMirror')[0].CodeMirror;
+
+			if (reactionId) {
+				editorHtml = htmlCM.getValue().replace(/\{reactionId\}/g, reactionId);
+				editorCss = cssCM.getValue().replace(/\{reactionId\}/g, reactionId);
+			}
+
+			output += editorHtml;
+			css = editorCss;
+		}
+
+		var html = '<span class="reaction reaction-dev">' + output + '</span>' + css + '</style>';
+		$('.js-reactionPreview').html(html);
+	}
+
+	generatePreview();
+});
+</xf:js>]]></template>
+  <template type="admin" title="th_reaction_handler_post_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:formrow rowtype="input" label="{{ phrase('th_allowed_forums_reactions') }}">
+	<ul class="inputList">
+		<li>
+			<xf:select name="options[allowed_node_ids][]" value="{$reaction.options.allowed_node_ids}" size="7" multiple="multiple" class="js-applicableForums">
+				<xf:option value="all" selected="{$reaction.options.allowed_node_ids} == 'all'">{{ phrase('(all)') }}</xf:option>
+
+				<xf:foreach loop="$nodeTree.getFlattened(0)" value="$treeEntry">
+					<xf:option value="{$treeEntry.record.node_id}"
+							   disabled="{{ $treeEntry.record.node_type_id == 'Category' }}"
+							   label="{{ repeat('&nbsp;&nbsp;', $treeEntry.depth)|raw }} {$treeEntry.record.title}"
+							   selected="{$treeEntry.record.node_type_id} == 'Forum' && ({$reaction.options.allowed_node_ids} == 'all' || {{ in_array({$treeEntry.record.node_id}, {$reaction.options.allowed_node_ids}) }})" />
+				</xf:foreach>
+			</xf:select>
+		</li>
+
+		<xf:hiddenval name="nodeCount">{{ count($nodeTree.getFlattened(0)) }}</xf:hiddenval>
+	</ul>
+</xf:formrow>
+
+<xf:formrow rowtype="input" label="{{ phrase('th_disabled_forums_reactions') }}">
+	<ul class="inputList">
+		<li>
+			<xf:select name="options[disabled_node_ids][]" value="{$reaction.options.disabled_node_ids}" size="7" multiple="multiple" class="js-applicableForums">
+				<xf:option value="none" selected="{$reaction.options.disabled_node_ids} == 'none' || !{$reaction.options.disabled_node_ids}">{{ phrase('(none)') }}</xf:option>
+
+				<xf:foreach loop="$nodeTree.getFlattened(0)" value="$treeEntry">
+					<xf:option value="{$treeEntry.record.node_id}"
+							   disabled="{{ $treeEntry.record.node_type_id == 'Category' }}"
+							   label="{{ repeat('&nbsp;&nbsp;', $treeEntry.depth)|raw }} {$treeEntry.record.title}"
+							   selected="{$treeEntry.record.node_type_id} == 'Forum' && ({$reaction.options.allowed_node_ids} != 'none' && {{ in_array({$treeEntry.record.node_id}, {$reaction.options.disabled_node_ids}) }})" />
+				</xf:foreach>
+			</xf:select>
+		</li>
+
+		<xf:hiddenval name="nodeCount">{{ count($nodeTree.getFlattened(0)) }}</xf:hiddenval>
+	</ul>
+</xf:formrow>]]></template>
+  <template type="admin" title="th_reaction_import_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ phrase('th_import_reactions_reactions') }}</xf:title>
+
+<xf:form action="{{ link('reactions/import') }}" upload="true" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:uploadrow name="upload" accept=".xml"
+				label="{{ phrase('import_from_uploaded_xml_file') }}"
+				hint="{{ phrase('th_reactions_pre_import_explain_ml') }}"/>
+		</div>
+		<xf:submitrow submit="{{ phrase('proceed...') }}" />
+	</div>
+</xf:form>]]></template>
+  <template type="admin" title="th_reaction_list_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ phrase('th_reactions') }}</xf:title>
+
+<xf:pageaction>
+	<div class="buttonGroup">
+		<xf:button href="{{ link('reactions/add') }}" icon="add">{{ phrase('th_add_reaction_reactions') }}</xf:button>
+		<xf:button href="{{ link('reactions/import') }}" icon="import" />
+		<xf:if is="$reactions">
+			<xf:button href="{{ link('reactions', null, {'export': ($exportView ? '' : '1')}) }}" icon="export" />
+		</xf:if>
+	</div>
+</xf:pageaction>
+
+<xf:css src="public:th_reactions.less" />
+<xf:css>
+	.dataList-cell.dataList-cell--imageSmall .reaction img
+	{
+		padding: 3px;
+	}
+</xf:css>
+<xf:if is="$reactions is not empty">
+	<xf:form action="{{ link(($exportView ? 'reactions/export' : 'reactions/toggle')) }}"
+		ajax="{{ $exportView ? false : true }}" class="block"
+	>
+		<div class="block-outer">
+			<xf:macro template="filter_macros" name="quick_filter" arg-key="reactions" arg-class="block-outer-opposite" />
+		</div>
+
+		<div class="block-container">
+			<div class="block-body">
+				<xf:datalist>
+					<xf:foreach loop="{$reactions}" key="$reactionId" value="$reaction">
+						<tbody class="dataList-rowGroup">
+							<xf:datarow>
+								<xf:if is="$exportView">
+									<xf:toggle name="export[]" value="{$reaction.reaction_id}" />
+								</xf:if>
+								<xf:cell href="{{ link('reactions/edit', $reaction) }}" class="dataList-cell--min dataList-cell--image dataList-cell--imageSmall">
+									{{ reaction($reaction, 'admin', true) }}
+								</xf:cell>
+								<xf:cell href="{{ link('reactions/edit', $reaction) }}">
+									{$reaction.title} <xf:if is="!{$reaction.random}"><span style="color: {{ $reaction.ReactionType.color }};">({{ $reaction.ReactionType.title }})</span><xf:else /><span>({{ phrase('th_random_reaction_reactions') }})</span></xf:if>
+								</xf:cell>
+
+								<xf:if is="!$exportView">
+									<xf:toggle name="enabled[{$reactionId}]" selected="$reaction.enabled" class="dataList-cell--separated" submit="true" />
+
+									<xf:delete href="{{ link('reactions/delete', $reaction) }}" />
+								</xf:if>
+							</xf:datarow>
+						</tbody>
+					</xf:foreach>
+				</xf:datalist>
+			</div>
+			<div class="block-footer block-footer--split">
+				<span class="block-footer-counter">{{ display_totals($reactions) }}</span>
+
+				<xf:if is="$exportView">
+					<span class="block-footer-select"><xf:checkbox standalone="true"><xf:option check-all=".dataList" label="{{ phrase('select_all') }}" /></xf:checkbox></span>
+					<span class="block-footer-controls"><xf:button type="submit" icon="export" accesskey="s" /></span>
+				</xf:if>
+			</div>
+		</div>
+	</xf:form>
+<xf:else />
+	<div class="blockMessage">{{ phrase('th_no_reactions_have_been_added_yet_reactions') }}</div>
+</xf:if>]]></template>
+  <template type="public" title="th_reaction_list_reactions" version_id="1000391" version_string="1.0.3 Patch Level 1"><![CDATA[<ul class="reactions-right__list">
+	<xf:if is="$modifyReactLink">
+		<li class="modify_reacts">
+			<a href="{$modifyReactLink}"
+			   data-xf-click="menu"
+			   data-menu-pos-ref="< .modify_reacts"
+			   aria-expanded="true"
+			   aria-haspopup="true">
+				<span>{{ phrase('th_undo_reactions_reactions') }}</span>
+			</a>
+			<div class="menu menu--modify-reacts" data-menu="menu" aria-hidden="true"
+				 data-href="{$modifyReactLink}"
+				 data-load-target=".js-modifyReactsMenuBody"
+				 data-nocache="true">
+				<div class="menu-content js-modifyReactsMenuBody">
+					<div class="menu-row">
+						{{ phrase('loading...') }}
+					</div>
+				</div>
+			</div>
+		</li>
+	</xf:if>
+
+	<xf:foreach loop="$reactions" value="$reaction" if="$reactions">
+		<li>
+			<a href="{$reaction.url}" data-xf-click="react" data-reaction-bar="< .message | .reactions-bar">
+				{$reaction.rendered}
+			</a>
+		</li>
+	</xf:foreach>
+</ul>
+
+
+
+<xf:if is="$unreactLink">
+	<div>
+		<a class="unreact-link" href="{$unreactLink}" title="{{ phrase('th_undo_reactions_reactions') }}" data-xf-click="react" data-reaction-bar="< .message | .reactions-bar">{{ phrase('th_undo_reactions_reactions') }}</a>
+	</div>
+<xf:else />
+	<div class="th_reactions__trigger">
+		<xf:if is="{{ property('th_triggerType_reactions') }} == 'image_path'">
+			<img src="{{ base_url(property('th_triggerValue_reactions'), false) }}" class="th_reactions__trigger__image">
+			<xf:else />
+			<i class="{{ property('th_triggerValue_reactions') }}" aria-hidden="true"></i>
+		</xf:if>
+	</div>
+</xf:if>]]></template>
+  <template type="admin" title="th_reaction_type_delete_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ phrase('confirm_action') }}</xf:title>
+
+<xf:form action="{{ link('reaction-types/delete', $reactionType) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:inforow rowtype="confirm">
+				{{ phrase('please_confirm_that_you_want_to_delete_following:') }}
+				<strong><a href="{{ link('reaction-types/edit', $reactionType) }}">{$reactionType.title}</a></strong>
+			</xf:inforow>
+		</div>
+		<xf:submitrow rowtype="simple" icon="delete" />
+	</div>
+</xf:form>]]></template>
+  <template type="admin" title="th_reaction_type_edit_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$reactionType.isInsert()">
+	<xf:title>{{ phrase('th_add_reaction_type_reactions') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('th_edit_reaction_type_reactions') }}: {$reactionType.title}</xf:title>
+</xf:if>
+
+<xf:pageaction if="$reactionType.isUpdate()">
+	<xf:button href="{{ link('reaction-types/delete', $reactionType) }}" icon="delete" overlay="true" />
+</xf:pageaction>
+
+<xf:css src="public:color_picker.less" />
+<xf:js src="xf/color_picker.js" min="1" />
+
+<xf:form action="{{ link('reaction-types/save', $reactionType) }}" ajax="true" class="block-container">
+	<div class="block-body">
+		<xf:textboxrow label="{{ phrase('th_reaction_type_id_reactions') }}" name="reaction_type_id" value="{$reactionType.reaction_type_id}" class="{{ {$reactionType.reaction_type_id} ? 'is-disabled' : '' }}" readonly="{{ {$reactionType.reaction_type_id} ? 'readonly' : '' }}">
+			<xf:explain>{{ !$reactionType.reaction_type_id ? phrase('th_reaction_type_id_explain_reactions') : '' }}</xf:explain>
+		</xf:textboxrow>
+
+		<hr class="formRowSep" />
+
+		<xf:textboxrow label="{{ phrase('title') }}" name="title" value="{$reactionType.title}" />
+
+		<xf:textboxrow label="{{ phrase('display_order') }}" name="display_order"
+					   value="{$reactionType.display_order}" min="0" step="10" type="number" />
+
+		<hr class="formRowSep" />
+
+		<xf:formrow
+			label="{{ phrase('color') }}"
+			rowclass="formRow--input"
+		>
+			<div class="inputGroup inputGroup--joined inputGroup--color"
+				data-xf-init="color-picker"
+				data-map-name="{$reactionType.color}"
+			>
+				<xf:textbox name="color" value="{$reactionType.color}" />
+				<div class="inputGroup-text"><span class="colorPickerBox js-colorPickerTrigger"></span></div>
+			</div>
+		</xf:formrow>
+	</div>
+
+	<xf:submitrow sticky="true" icon="save" />
+</xf:form>]]></template>
+  <template type="admin" title="th_reaction_type_list_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ phrase('th_reaction_types_reactions') }}</xf:title>
+
+<xf:pageaction>
+	<div class="buttonGroup">
+		<xf:button href="{{ link('reaction-types/add') }}" icon="add">{{ phrase('th_add_reaction_type_reactions') }}</xf:button>
+	</div>
+</xf:pageaction>
+
+<xf:css src="public:th_reactions.less" />
+
+<xf:if is="$reactionTypes is not empty">
+	<xf:form action="{{ link('reaction-types/toggle') }}"
+		ajax="true" class="block"
+	>
+		<div class="block-outer">
+			<xf:macro template="filter_macros" name="quick_filter" arg-key="reaction-types" arg-class="block-outer-opposite" />
+		</div>
+
+		<div class="block-container">
+			<div class="block-body">
+				<xf:datalist>
+					<xf:foreach loop="{$reactionTypes}" key="$reactionTypeId" value="$reactionType">
+						<tbody class="dataList-rowGroup">
+							<xf:datarow>
+								<xf:cell href="{{ link('reaction-types/edit', $reactionType) }}" class="dataList-cell--min dataList-cell--image dataList-cell--imageSmall">
+									<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="background-color: {{ $reactionType.color }};" />
+								</xf:cell>
+								<xf:cell href="{{ link('reaction-types/edit', $reactionType) }}">
+									{$reactionType.title}
+								</xf:cell>
+								<xf:delete href="{{ link('reaction-types/delete', $reactionType) }}" />
+							</xf:datarow>
+						</tbody>
+					</xf:foreach>
+				</xf:datalist>
+			</div>
+		</div>
+	</xf:form>
+<xf:else />
+	<div class="blockMessage">{{ phrase('th_no_reactions_types_have_been_added_yet_reactions') }}</div>
+</xf:if>]]></template>
+  <template type="public" title="th_reactions.less" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[.reactions-bar
+{
+	.m-clearFix();
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.reactions-bar.content
+{
+	margin: 10px 0;
+	.xf-th_reactions__barStyle();
+}
+.reactions-bar.bit-list
+{
+	float: right;
+	transform: scale(.75);
+}
+.reactions-bar.bit-list
+{
+	margin: -1px;
+}
+
+.reactions-bar ul
+{
+	padding: 0px;
+	margin: 0px;
+
+	list-style-type: none;
+
+	display: inline-flex;
+	align-items: center;
+}
+
+.reactions-bar li
+{
+	display: flex;
+	align-items: inherit;
+
+	img {
+		vertical-align: middle;
+		height: 22px;
+	}
+
+}
+
+.reactions-bar .reactions-left
+{
+	.m-clearFix();
+
+	margin-right: auto;
+	display: flex;
+	justify-items: left;
+
+	.th_reactions__listItem
+	{
+		margin-right: 5px;
+
+		.xf-th_reactions__listItemStyle();
+
+		span {
+			padding: 2px 5px;
+			vertical-align: middle;
+		}
+
+		.reaction-count {
+			.xf-th_reactions__listItemRightStyle();
+		}
+	}
+}
+
+.reactions-bar .reactions-right
+{
+	.m-clearFix();
+
+	margin-left: auto;
+	display: flex;
+	justify-items: right;
+	align-items: center;
+
+	li
+	{
+		padding-left: 5px;
+	}
+}
+
+.th_reactions__trigger {
+	cursor: pointer;
+	.xf-th_reactions__triggerStyle();
+
+	.th_reactions__trigger__image {
+		.xf-th_triggerImageStyling_reactions();
+	}
+}
+
+.th_reactions__trigger, .reactions-right__list li img {
+	&:hover {
+		transform: scale(1, 1);
+		animation-name: th_reactions_triggerHover;
+		animation-duration: 0.3s;
+		animation-direction: normal;
+		animation-fill-mode: both;
+	}
+	&--hoverOut {
+		//transform: scale(1.2, 1.2);
+		animation-name: th_reactions_triggerHover;
+		animation-duration: 0.3s;
+		animation-direction: reverse;
+		animation-fill-mode: both;
+	}
+}
+
+.reactions-bar .list-reactions
+{
+
+}
+
+.reacts_total_text .reacts_total_text__reactionType:after {
+	content: "|";
+	padding-left: 2px;
+	color: @xf-textColor;
+}
+
+.reacts_total_text .reacts_total_text__reactionType:last-child:after {
+	content: "";
+}
+
+.react-modify .menu-row
+{
+	padding: 0;
+	margin: 0;
+}
+
+.reactions-bar a
+{
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.reaction
+{
+	display: flex;
+	max-width: none;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.reaction-item
+{
+	display: flex;
+	align-items: center;
+
+	.reaction-title
+	{
+		padding-left: 5px;
+	}
+}
+
+/* Handling display for specific classes */
+.reaction.alert img,
+.reaction.bit-list img
+{
+	max-width: 20px;
+	vertical-align: middle;
+}
+
+.reaction.newsfeed img,
+.reaction.list img,
+{
+	max-width: 20px;
+	vertical-align: sub;
+}
+
+.react_total_bar
+{
+	padding: 0;
+	margin: 0;
+
+	width: 100%;
+	display: flex;
+	height: 16px;
+
+	border-radius: @xf-borderRadiusSmall;
+	overflow: hidden;
+
+	display: flex;
+
+	.react_bar_segment
+	{
+		display: inline-block;
+		height: inherit;
+		min-width: 3px;
+	}
+}
+
+.overlay-content .react_total_bar {border-radius: 0 !important;}
+
+.reactOverviewBlocks
+{
+	.m-listPlain();
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+
+	> li
+	{
+		.has-no-flexbox &
+		{
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		width: 33.3%;
+		max-width: 100%;
+		padding: @xf-blockPaddingV @xf-blockPaddingH;
+
+		@media (max-width: 1150px)
+		{
+			width: 50%;
+		}
+
+		@media (max-width: 580px)
+		{
+			width: 100%;
+		}
+	}
+}
+
+.reactOverviewBlock
+{
+	display: flex;
+	flex-direction: column;
+}
+.has-no-touchevents .reactOverviewBlock .reactOverviewBlock-list li
+{
+	.contentRow-extra
+	{
+		opacity: 0;
+	}
+
+	&:hover .contentRow-extra
+	{
+		opacity: 1;
+	}
+}
+
+.reactOverviewBlock-list
+{
+	.m-listPlain();
+
+	> li
+	{
+		margin: @xf-paddingMedium 0;
+	}
+}
+
+<xf:if is="{{ $reactions }}">
+	<xf:foreach loop="{{ $reactions }}" key="$reactionId" value="$reaction">
+		<xf:if is="$reaction.styling_type == 'image'">
+			<xf:if is="$reaction.image_type == 'sprite' && $reaction.image_sprite_css">
+				.reaction--sprite.reaction--sprite{$reactionId}
+				{
+					{$reaction.image_sprite_css|raw}
+				}
+			</xf:if>
+		</xf:if>
+
+		<xf:if is="$reaction.styling_type == 'html_css'">
+			{$reaction.styling.html_css.css|raw}
+		</xf:if>
+	</xf:foreach>
+</xf:if>
+
+
+
+.tween(@start, @end, @ratio) {
+	@tween: @start + (-0.5 * pow(2.71828, (-6 * @ratio)) * (-2 * pow(2.71828, (6 * @ratio)) + sin(12 * @ratio) + 2 * cos(12 * @ratio))) * (@end - @start);
+}
+.tween2(@start, @end, @ratio) {
+	@tween2: @start + (-0.5 * pow(2.71828, (-6 * @ratio)) * (-2 * pow(2.71828, (6 * @ratio)) + sin(12 * @ratio) + 2 * cos(12 * @ratio))) * (@end - @start);
+}
+.tween3(@start, @end, @ratio) {
+	@tween3: @start + (-0.5 * pow(2.71828, (-6 * @ratio)) * (-2 * pow(2.71828, (6 * @ratio)) + sin(12 * @ratio) + 2 * cos(12 * @ratio))) * (@end - @start);
+}
+
+.tweenGentle(@start, @end, @ratio) {
+	@tweenGentle: @start + (((7 * pow(2.71828, (-7 * @ratio)) * sin(sqrt(71) * @ratio)) / sqrt(71)) - (pow(2.71828, (-7 * @ratio)) * cos(sqrt(71) * @ratio)) + 1) * (@end - @start);
+}
+.tweenGentle2(@start, @end, @ratio) {
+	@tweenGentle2: @start + (((7 * pow(2.71828, (-7 * @ratio)) * sin(sqrt(71) * @ratio)) / sqrt(71)) - (pow(2.71828, (-7 * @ratio)) * cos(sqrt(71) * @ratio)) + 1) * (@end - @start);
+}
+.tweenGentle3(@start, @end, @ratio) {
+	@tweenGentle3: @start + (((7 * pow(2.71828, (-7 * @ratio)) * sin(sqrt(71) * @ratio)) / sqrt(71)) - (pow(2.71828, (-7 * @ratio)) * cos(sqrt(71) * @ratio)) + 1) * (@end - @start);
+}
+
+.tweenStiff(@start, @end, @ratio) {
+	@tweenStiff: @start + (pow(2.71828, (-13 * @ratio)) * (pow(2.71828, (13 * @ratio)) - 13 * sin(@ratio) - cos(@ratio))) * (@end - @start);
+}
+.tweenStiff2(@start, @end, @ratio) {
+	@tweenStiff2: @start + (pow(2.71828, (-13 * @ratio)) * (pow(2.71828, (13 * @ratio)) - 13 * sin(@ratio) - cos(@ratio))) * (@end - @start);
+}
+.tweenStiff3(@start, @end, @ratio) {
+	@tweenStiff3: @start + (pow(2.71828, (-13 * @ratio)) * (pow(2.71828, (13 * @ratio)) - 13 * sin(@ratio) - cos(@ratio))) * (@end - @start);
+}
+
+.th_reactions_triggerHover(@n, @i: 0) when (@i =< @n) {
+	@selector: e('@{i}%');
+    @{selector}{
+		.tween(1, 1.2, (@i / @n));
+		transform: scale(@tween, @tween);
+	}
+	.th_reactions_triggerHover(@n, (@i + 1));
+}
+
+@keyframes th_reactions_triggerHover {
+	.th_reactions_triggerHover(100);
+}
+
+
+
+.reactions-bar .reactions-right__list {
+	margin: 10px;
+	flex-wrap: wrap;
+}
+
+.reactions-bar--out .reactions-right__list {
+	will-change: transform;
+	transform: none;
+	opacity: 0;
+	transform-origin: 100% 50%;
+	transform-style: flat;
+	display: none;
+}
+
+.th_reactions_expandShow(@n, @i: 0) when (@i =< @n) {
+	@selector: e('@{i}%');
+    @{selector}{
+		.tweenGentle(0, 1, (@i / @n));
+		.tweenGentle2(0.5, 1, (@i / @n));
+		transform: scale(@tweenGentle, @tweenGentle2);
+		opacity: (0.1 + ((@i / @n) * 1.5));
+		& when (@i = 0) {
+			display: none;
+			width: 0;
+			height: 0;
+		}
+		& when (@i = 1) {
+			display: inline-flex;
+			width: auto;
+			height: auto;
+		}
+		& when (@i = 100) {
+			display: inline-flex;
+			transform: scale(1, 1);
+		}
+	}
+	.th_reactions_expandShow(@n, (@i + 1));
+}
+
+@keyframes th_reactions_expandShow {
+	.th_reactions_expandShow(100);
+}
+
+.reactions-bar--out .reactions-bar--show {
+	animation-name: th_reactions_expandShow;
+	animation-duration: 0.5s;
+	animation-direction: normal;
+	animation-fill-mode: both;
+	opacity: 1;
+	display: inline-flex;
+}
+
+.reactions-bar--out .reactions-bar--hide {
+	opacity: 0;
+	display: inline-flex;
+	animation-name: th_reactions_expandShow;
+	animation-duration: 0.5s;
+	animation-direction: reverse;
+	animation-fill-mode: both;
+}
+
+
+
+.reactions-bar--up .reactions-right__list {
+	li {
+		transform: translateY(20px);
+		transform-origin: center;
+		transform-style: flat;
+		display: none;
+		visibility: hidden;
+	}
+
+	a {
+		transform: scale(0.4, 0.4);
+	}
+}
+
+.th_reactions_slideUpShow(@n, @i: 0) when (@i =< @n) {
+	@selector: e('@{i}%');
+	.tweenGentle(20, 0, (@i / @n));
+	@translateY: e('@{tweenGentle}px');
+    @{selector}{
+		transform: translateY(@translateY);
+		opacity: (0.4 + ((@i / @n)));
+		& when (@i = 0) {
+			display: none;
+			visibility: hidden;
+			width: 0;
+			height: 0;
+		}
+		& when (@i = 1) {
+			display: inline-flex;
+			visibility: visible;
+			width: auto;
+			height: auto;
+		}
+		& when (@i = 100) {
+			display: inline-flex;
+			visibility: visible;
+		}
+	}
+	.th_reactions_slideUpShow(@n, (@i + 1));
+}
+
+@keyframes th_reactions_slideUpShow {
+	.th_reactions_slideUpShow(100);
+}
+
+.th_reactions_slideExpandShow(@n, @i: 0) when (@i =< @n) {
+	@selector: e('@{i}%');
+	.tween(0.4, 1, (@i / @n));
+    @{selector}{
+		transform: scale(@tween, @tween);
+	}
+	.th_reactions_slideExpandShow(@n, (@i + 1));
+}
+
+@keyframes th_reactions_slideExpandShow {
+	.th_reactions_slideExpandShow(100);
+}
+
+
+.th_reactions_delay(@n, @i: 0) when (@i =< @n) {
+	@selector: e('.reactions-bar--up .reactions-bar--show li:nth-last-of-type(@{i}), .reactions-bar--up .reactions-bar--show a:nth-last-of-type(@{i})');
+    @{selector}{
+		animation-delay: (0.025s * @i);
+	}
+	.th_reactions_delay(@n, (@i + 1));
+}
+
+.th_reactions_delay(50);
+
+
+
+.reactions-bar--up .reactions-bar--show {
+	li {
+		//opacity: 1;
+		animation-name: th_reactions_slideUpShow;
+		animation-duration: 0.5s;
+		animation-direction: normal;
+		animation-fill-mode: both;
+		display: inline-flex;
+		visibility: visible;;
+	}
+
+	a {
+		//opacity: 1;
+		animation-name: th_reactions_slideExpandShow;
+		animation-duration: 0.5s;
+		animation-direction: normal;
+		animation-fill-mode: both;
+
+	}
+}
+
+.reactions-bar--up .reactions-bar--hide {
+	li {
+		//opacity: 1;
+		animation-name: th_reactions_slideUpShow;
+		animation-duration: 0.5s;
+		animation-direction: reverse;
+		animation-fill-mode: both;
+		display: inline-flex;
+		visibility: visible;
+	}
+
+	a {
+		//opacity: 1;
+		animation-name: th_reactions_slideExpandShow;
+		animation-duration: 0.5s;
+		animation-direction: reverse;
+		animation-fill-mode: both;
+
+	}
+}
+]]></template>
+  <template type="public" title="th_reactions_list_reactions" version_id="1000294" version_string="1.0.2 Patch Level 4"><![CDATA[<xf:if is="$title">
+	<xf:title>{$title}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('th_members_who_reacted_this_reactions') }}</xf:title>
+</xf:if>
+
+<xf:if is="$breadcrumbs">
+	<xf:breadcrumb source="$breadcrumbs" />
+</xf:if>
+
+<xf:css src="th_reactions.less" />
+<xf:js src="themehouse/reactions/react.js" addon="ThemeHouse/Reactions"/>
+
+<div class="block-container js-reactList-{$type}{$id}">
+	<xf:macro template="th_display_reactions" name="react_total_bar" arg-reacts="{$reactsByType}" arg-reactsCount="{$reactsCount}" />
+	<div class="block-body">
+		<h2 class="block-tabHeader block-tabHeader--reactionsList tabs"
+			data-xf-init="tabs"
+			data-panes=".js-reactionTabPanes-{$type}{$id}"
+			data-state="replace"
+			role="tablist">
+			<span class="hScroller-scroll">
+				<span class="tabs-tab"
+					  id="all"
+					  role="tab">{{ phrase('all') }} ({{ $reactsCount }})</span>
+
+				<xf:foreach loop="$xf.reactionTypes" key="$reactionTypeId" value="$reactionType">
+					<xf:if is="count({$reactsByReactionType.{$reactionTypeId}})">
+						<span class="tabs-tab"
+							  id="{{ $reactionTypeId }}"
+							  role="tab">{{ $reactionType.title }} ({{ count({$reactsByType.{$reactionTypeId}}) }})</span>
+					</xf:if>
+				</xf:foreach>
+			</span>
+		</h2>
+	</div>
+</div>
+
+<div class="block-container">
+	<ul class="tabPanes js-reactionTabPanes-{$type}{$id}">
+		<xf:foreach loop="$reactsByReactionType" key="$reactionTypeId" value="$reactions">
+			<li class="is-active" role="tabpanel" id="{{ $reactionTypeId }}">
+				<div class="block-body">
+					<ol class="reactOverviewBlocks">
+						<xf:foreach loop="$reactions" key="$reactionId" value="$reacts">
+							<xf:macro name="react_block"
+									  arg-reactionId="{$reactionId}"
+									  arg-reacts="{$reacts}" />
+						</xf:foreach>
+					</ol>
+				</div>
+			</li>
+		</xf:foreach>
+	</ul>
+</div>
+
+<xf:macro name="react_block" arg-reactionId="!" arg-reacts="!">
+	<xf:if contentcheck="true">
+		<li class="reactOverviewBlock">
+			<h3 class="reaction-item block-textHeader">
+				{{ reaction($reactionId, 'list') }}
+				<span class="reaction-title">{{ $xf.reactions.{$reactionId}.title}}</span>
+			</h3>
+			<ol class="reactOverviewBlock-list">
+				<xf:contentcheck>
+					<xf:foreach loop="$reacts" key="$reactId" value="$react">
+						<li>
+							<div class="contentRow contentRow--alignMiddle">
+								<div class="contentRow-figure">
+									<xf:avatar user="$react.Reactor" size="xs" />
+								</div>
+								<div class="contentRow-main">
+									<xf:if is="$react.canUnreact()">
+										<div class="contentRow-extra contentRow-extra--large">
+											<a href="{{ $react.getHandler().getUnreactSingleLink($react.react_id) }}" data-xf-click="overlay">
+												<i class="fa fa-times" aria-hidden="true"></i>
+											</a>
+										</div>
+									</xf:if>
+
+									<h3 class="contentRow-title"><xf:username user="$react.Reactor" rich="true" class="reactOverviewBlock-header" /></h3>
+
+									<div class="contentRow-lesser">
+										<xf:date time="$react.react_date" />
+									</div>
+								</div>
+							</div>
+						</li>
+					</xf:foreach>
+				</xf:contentcheck>
+			</ol>
+		</li>
+	</xf:if>
+</xf:macro>]]></template>
+  <template type="public" title="th_reactions_modify_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<div class="react-modify">
+	<div class="menu-row">
+		<ul class="listPlain">
+			<xf:foreach loop="$reacts" value="$react">
+				<a href="{{ $react.getHandler().getUnreactSingleLink($react.react_id) }}" data-xf-click="react" data-reaction-bar="#reactions-bar-{{ $react.content_id }}">
+					<li class="reaction-item menu-linkRow">
+						{{ reaction($react.reaction_id, 'modify') }}
+						<span class="reaction-title">{{ $xf.reactions.{$react.reaction_id}.title }}</span>
+					</li>
+				</a>
+			</xf:foreach>
+		</ul>
+	</div>
+</div>]]></template>
+  <template type="admin" title="th_style_property_template_dimensions_reactions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:formrow label="{$titleHtml}" hint="{$hintHtml}" rowclass="{$rowClass}" explain="{$property.description}" rowtype="input">
+	<div class="inputGroup">
+		<xf:textbox name="{$formBaseKey}[width]" value="{$property.property_value.width}" min="1"
+					title="{{ phrase('width') }}" type="number" data-xf-init="tooltip" />
+		<span class="inputGroup-text">x</span>
+		<xf:textbox name="{$formBaseKey}[height]" value="{$property.property_value.height}" min="1"
+					title="{{ phrase('height') }}" type="number" data-xf-init="tooltip" />
+		<span class="inputGroup-text">|</span>
+		<xf:textbox name="{$formBaseKey}[unit]" value="{$property.property_value.unit}"
+					placeholder="{{ phrase('unit') }}" />
+	</div>
+</xf:formrow>]]></template>
+</templates>

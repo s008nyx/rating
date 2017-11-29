@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<reactions_export>
+  <reactionTypes>
+    <reactionType reaction_type_id="positive" title="Positive" display_order="10" color="#4CAF50"/>
+    <reactionType reaction_type_id="neutral" title="Neutral" display_order="20" color="#B0BEC5"/>
+    <reactionType reaction_type_id="negative" title="Negative" display_order="30" color="#F44336"/>
+  </reactionTypes>
+  <reactions>
+    <reaction title="Happy" display_order="10" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/happy.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Like" display_order="10" like_wrapper="1" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/like.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Agree" display_order="20" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/agree.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Indifferent" display_order="20" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>neutral</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/neutral.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Disagree" display_order="30" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/disagree.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Sad" display_order="30" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>neutral</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/sad.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Angry" display_order="40" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/angry.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Funny" display_order="40" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/funny.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Clever" display_order="50" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/wink.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Winner" display_order="50" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/winner.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Informative" display_order="60" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/informative.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Scared" display_order="60" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/scared.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Friendly" display_order="70" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/friendly.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="In Love" display_order="70" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/inlove.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Surprised" display_order="80" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>neutral</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/surprised.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Useful" display_order="80" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/useful.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Funny" display_order="90" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/tongue.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Optimistic" display_order="90" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>neutral</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/optimistic.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Boring" display_order="100" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/sleepy.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Creative" display_order="100" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>positive</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/creative.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Old" display_order="110" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/old.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Bad Spelling" display_order="120" like_wrapper="0" random="0" enabled="1">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/badspelling.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+    <reaction title="Dumb" display_order="130" like_wrapper="0" random="0" enabled="0">
+      <reaction_type_id>negative</reaction_type_id>
+      <styling_type>image</styling_type>
+      <reaction_text></reaction_text>
+      <image_url>styles/themehouse/reactions/dumb.svg</image_url>
+      <image_url_2x></image_url_2x>
+      <image_type>normal</image_type>
+      <styling>a:1:{s:12:"image_normal";a:3:{s:1:"w";s:2:"22";s:1:"h";s:2:"22";s:1:"u";s:2:"px";}}</styling>
+      <user_criteria>a:0:{}</user_criteria>
+      <react_handler>a:4:{i:0;s:20:"conversation_message";i:1;s:4:"post";i:2;s:12:"profile_post";i:3;s:20:"profile_post_comment";}</react_handler>
+      <options>a:4:{s:16:"allowed_node_ids";s:3:"all";s:17:"disabled_node_ids";s:4:"none";s:6:"alerts";s:1:"1";s:8:"newsfeed";s:1:"1";}</options>
+    </reaction>
+  </reactions>
+</reactions_export>

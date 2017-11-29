@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+  <route route_type="admin" route_prefix="reaction-types" format=":str&lt;reaction_type_id&gt;/" controller="ThemeHouse\Reactions:ReactionType" context="reactionTypes"/>
+  <route route_type="admin" route_prefix="reactions" format=":int&lt;reaction_id,title&gt;/" controller="ThemeHouse\Reactions:Reaction" context="reactions"/>
+  <route route_type="public" route_prefix="reactions" sub_name="list" format="list/:str&lt;content_type&gt;/:int&lt;content_id&gt;" controller="ThemeHouse\Reactions:React" context="reactions" action_prefix="list"/>
+  <route route_type="public" route_prefix="reactions" sub_name="modify" format="modify/:str&lt;content_type&gt;/:int&lt;content_id&gt;" controller="ThemeHouse\Reactions:React" context="reactions" action_prefix="modify"/>
+  <route route_type="public" route_prefix="reactions" sub_name="react" format="react/:str&lt;content_type&gt;/:int&lt;content_id&gt;/:int&lt;reaction_id&gt;" controller="ThemeHouse\Reactions:React" context="reactions" action_prefix="react"/>
+  <route route_type="public" route_prefix="reactions" sub_name="unreact" format="unreact/:int&lt;react_id&gt;" controller="ThemeHouse\Reactions:React" context="reactions" action_prefix="unreact"/>
+  <route route_type="public" route_prefix="reactions" sub_name="unreacts" format="unreacts/:str&lt;content_type&gt;/:int&lt;content_id&gt;" controller="ThemeHouse\Reactions:React" context="reactions" action_prefix="unreacts"/>
+</routes>

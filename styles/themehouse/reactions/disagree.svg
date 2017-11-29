@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Disagree </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="127.798425" cy="127.798425" r="127.798425"></circle>
+    </defs>
+    <g id="Emoji" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Disagree-">
+            <g id="Disagree">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FF4F50" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <path d="M71.6794434,183.413696 L150.251831,258.781006 C204.677028,244.26762 257.505615,206.960014 257.505615,147.697021 C257.505615,146.487573 258.479004,146.289771 258.479004,145.080322 L183.032715,70.8603516 L71.6794434,183.413696 Z" id="Shape" fill="#DE3141" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                <g id="Group" mask="url(#mask-2)">
+                    <g transform="translate(82.000000, 82.000000)"></g>
+                </g>
+                <path d="M145.160473,166.145862 L127.785889,148.726587 L93.0367205,183.565137 C78.9127614,197.725426 57.6723282,176.539487 71.7962873,162.379199 L106.59988,127.486084 L89.1980837,110.039527 L71.7962873,92.5929693 C57.6723282,78.4326805 78.9127614,57.2467419 93.0367205,71.4070307 L110.411305,88.8263057 L127.785889,106.245581 L162.535057,71.4070307 C176.659016,57.2467419 197.899449,78.4326805 183.77549,92.5929693 L148.971897,127.486084 L166.373694,144.932641 L183.77549,162.379199 C197.899449,176.539487 176.659016,197.725426 162.535057,183.565137 L145.160473,166.145862 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
